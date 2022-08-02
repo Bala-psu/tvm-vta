@@ -25,17 +25,18 @@ ifeq (, $(VERILATOR_INC_DIR))
 		ifeq (, $(wildcard /usr/share/verilator/include/*))
 			$(error "Verilator include directory is not set properly")
 		else
-			VERILATOR_INC_DIR := /usr/share/verilator/include
+			VERILATOR_INC_DIR := /home/balas/anaconda3/share/verilator/include
 		endif
 	else
-			VERILATOR_INC_DIR := /usr/local/share/verilator/include
+			VERILATOR_INC_DIR := /home/balas/anaconda3/share/verilator/include
 	endif
 endif
 
-CONFIG = DefaultDe10Config
+CONFIG = DefaultAcxConfig
 TOP = VTA
 TOP_TEST = Test
 BUILD_NAME = build
+VTA_HW_PATH := /home/balas/tvm-vta
 # Set USE_TRACE = 1 to generate a trace during simulation.
 USE_TRACE = 0
 # With USE_TRACE = 1, default trace format is VCD.

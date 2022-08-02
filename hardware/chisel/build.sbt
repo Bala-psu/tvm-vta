@@ -20,6 +20,7 @@
 name := "vta"
 version := "0.1.0-SNAPSHOT"
 organization := "edu.washington.cs"
+logLevel := Level.Debug
 
 scalaVersion := "2.12.15"
 scalacOptions ++= Seq(

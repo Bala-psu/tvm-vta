@@ -20,7 +20,7 @@
 #ifndef VTA_DPI_TSIM_H_
 #define VTA_DPI_TSIM_H_
 
-#include <tvm/runtime/c_runtime_api.h>
+#include </home/balas/achronix-tvm/include/tvm/runtime/c_runtime_api.h>
 #include <stdint.h>
 #include <svdpi.h>
 

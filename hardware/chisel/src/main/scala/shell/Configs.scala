@@ -43,6 +43,25 @@ class PynqConfig extends Config((site, here, up) => {
     )
 })
 
+/** AcxConfig. Shell configuration for Acx */
+class AcxConfig extends Config((site, here, up) => {
+  case ShellKey =>
+    ShellParams(
+      hostParams = AXIParams(coherent = false,
+        addrBits = 16,
+        dataBits = 32,
+        lenBits = 8,
+        userBits = 1),
+      memParams = AXIParams(coherent = true,
+        addrBits = 32,
+        dataBits = 64,
+        lenBits = 8,
+        userBits = 1),
+      vcrParams = VCRParams(),
+      vmeParams = VMEParams()
+    )
+})
+
 /** F1Config. Shell configuration for F1 */
 class F1Config extends Config((site, here, up) => {
   case ShellKey =>

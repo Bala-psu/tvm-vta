@@ -34,10 +34,16 @@ import vta.test._
 class DefaultPynqConfig extends Config(new CoreConfig ++ new PynqConfig)
 class DefaultF1Config extends Config(new CoreConfig ++ new F1Config)
 class DefaultDe10Config extends Config(new CoreConfig ++ new De10Config)
+class DefaultAcxConfig extends Config(new CoreConfig ++ new AcxConfig)
 
 object DefaultPynqConfig extends App {
   implicit val p: Parameters = new DefaultPynqConfig
   (new chisel3.stage.ChiselStage).emitSystemVerilog(new XilinxShell, args)
+}
+
+object DefaultAcxConfig extends App {
+  implicit val p: Parameters = new DefaultAcxConfig
+  (new chisel3.stage.ChiselStage).emitSystemVerilog(new AchronixShell, args)
 }
 
 object DefaultF1Config extends App {
@@ -52,6 +58,11 @@ object DefaultDe10Config extends App {
 
 object TestDefaultPynqConfig extends App {
   implicit val p: Parameters = new DefaultPynqConfig
+  (new chisel3.stage.ChiselStage).emitSystemVerilog(new Test, args)
+}
+
+object TestDefaultAcxConfig extends App {
+  implicit val p: Parameters = new DefaultAcxConfig
   (new chisel3.stage.ChiselStage).emitSystemVerilog(new Test, args)
 }
 
