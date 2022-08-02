@@ -130,14 +130,14 @@ xcuserdata/
 .m2
 
 # Compiled Dynamic libraries
-*.so
+#*.so
 *.dylib
 *.dll
 
 # Compiled Object files
 *.slo
 *.lo
-*.o
+#*.o
 *.obj
 
 # Precompiled Headers
@@ -152,7 +152,7 @@ xcuserdata/
 
 # Executables
 *.exe
-*.out
+#*.out
 *.app
 
 ## Other
@@ -171,7 +171,7 @@ cscope*
 # TVM generated code
 perf
 .bash_history
-*.json
+#*.json
 *.params
 *.onnx
 *.h5
