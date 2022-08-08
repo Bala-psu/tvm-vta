@@ -9,14 +9,10 @@
 
 //==========
 
-VerilatedContext* VTest::contextp() {
-    return __VlSymsp->_vm_contextp__;
-}
-
 void VTest::eval_step() {
     VL_DEBUG_IF(VL_DBG_MSGF("+++++TOP Evaluate VTest::eval\n"); );
     VTest__Syms* __restrict vlSymsp = this->__VlSymsp;  // Setup global symbol table
-    VTest* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
 #ifdef VL_DEBUG
     // Debug assertions
     _eval_debug_assertions();
@@ -70,7 +66,7 @@ void VTest::_eval_initial_loop(VTest__Syms* __restrict vlSymsp) {
     } while (VL_UNLIKELY(__Vchange));
 }
 
-VL_INLINE_OPT void VTest::__Vdpiimwrap_Test__DOT__sim_shell__DOT__mod_sim__DOT__sim__DOT__VTASimDPI_TOP(CData/*7:0*/ (&sim_wait), CData/*7:0*/ (&sim_exit)) {
+VL_INLINE_OPT void VTest::__Vdpiimwrap_Test__DOT__sim_shell__DOT__mod_sim__DOT__sim__DOT__VTASimDPI_TOP(CData/*7:0*/(&  sim_wait), CData/*7:0*/(&  sim_exit)) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    VTest::__Vdpiimwrap_Test__DOT__sim_shell__DOT__mod_sim__DOT__sim__DOT__VTASimDPI_TOP\n"); );
     // Body
     unsigned char sim_wait__Vcvt;
@@ -80,7 +76,7 @@ VL_INLINE_OPT void VTest::__Vdpiimwrap_Test__DOT__sim_shell__DOT__mod_sim__DOT__
     sim_exit = (0xffU & sim_exit__Vcvt);
 }
 
-VL_INLINE_OPT void VTest::__Vdpiimwrap_Test__DOT__sim_shell__DOT__mod_host__DOT__host_dpi__DOT__VTAHostDPI_TOP(CData/*7:0*/ (&req_valid), CData/*7:0*/ (&req_opcode), CData/*7:0*/ (&req_addr), IData/*31:0*/ (&req_value), CData/*7:0*/ req_deq, CData/*7:0*/ resp_valid, IData/*31:0*/ resp_value) {
+VL_INLINE_OPT void VTest::__Vdpiimwrap_Test__DOT__sim_shell__DOT__mod_host__DOT__host_dpi__DOT__VTAHostDPI_TOP(CData/*7:0*/(&  req_valid), CData/*7:0*/(&  req_opcode), CData/*7:0*/(&  req_addr), IData/*31:0*/(&  req_value), const CData/*7:0*/ req_deq, const CData/*7:0*/ resp_valid, const IData/*31:0*/ resp_value) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    VTest::__Vdpiimwrap_Test__DOT__sim_shell__DOT__mod_host__DOT__host_dpi__DOT__VTAHostDPI_TOP\n"); );
     // Body
     unsigned char req_valid__Vcvt;
@@ -88,11 +84,11 @@ VL_INLINE_OPT void VTest::__Vdpiimwrap_Test__DOT__sim_shell__DOT__mod_host__DOT_
     unsigned char req_addr__Vcvt;
     unsigned int req_value__Vcvt;
     unsigned char req_deq__Vcvt;
-    for (size_t req_deq__Vidx = 0; req_deq__Vidx < 1; ++req_deq__Vidx) req_deq__Vcvt = req_deq;
+    req_deq__Vcvt = req_deq;
     unsigned char resp_valid__Vcvt;
-    for (size_t resp_valid__Vidx = 0; resp_valid__Vidx < 1; ++resp_valid__Vidx) resp_valid__Vcvt = resp_valid;
+    resp_valid__Vcvt = resp_valid;
     unsigned int resp_value__Vcvt;
-    for (size_t resp_value__Vidx = 0; resp_value__Vidx < 1; ++resp_value__Vidx) resp_value__Vcvt = resp_value;
+    resp_value__Vcvt = resp_value;
     VTAHostDPI(&req_valid__Vcvt, &req_opcode__Vcvt, &req_addr__Vcvt, &req_value__Vcvt, req_deq__Vcvt, resp_valid__Vcvt, resp_value__Vcvt);
     req_valid = (0xffU & req_valid__Vcvt);
     req_opcode = (0xffU & req_opcode__Vcvt);
@@ -100,37 +96,35 @@ VL_INLINE_OPT void VTest::__Vdpiimwrap_Test__DOT__sim_shell__DOT__mod_host__DOT_
     req_value = req_value__Vcvt;
 }
 
-VL_INLINE_OPT void VTest::__Vdpiimwrap_Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi__DOT__VTAMemDPI__Vdpioc2_TOP(CData/*7:0*/ rd_req_valid, CData/*7:0*/ rd_req_len, CData/*7:0*/ rd_req_id, QData/*63:0*/ rd_req_addr, CData/*7:0*/ wr_req_valid, CData/*7:0*/ wr_req_len, QData/*63:0*/ wr_req_addr, CData/*7:0*/ wr_valid, const QData/*63:0*/ (&wr_value)[1], QData/*63:0*/ wr_strb, CData/*7:0*/ (&rd_valid), CData/*7:0*/ (&rd_id), QData/*63:0*/ (&rd_value)[1], CData/*7:0*/ rd_ready) {
+VL_INLINE_OPT void VTest::__Vdpiimwrap_Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi__DOT__VTAMemDPI__Vdpioc2_TOP(const CData/*7:0*/ rd_req_valid, const CData/*7:0*/ rd_req_len, const CData/*7:0*/ rd_req_id, const QData/*63:0*/ rd_req_addr, const CData/*7:0*/ wr_req_valid, const CData/*7:0*/ wr_req_len, const QData/*63:0*/ wr_req_addr, const CData/*7:0*/ wr_valid, const QData/*63:0*/(&  wr_value)[1], const QData/*63:0*/ wr_strb, CData/*7:0*/(&  rd_valid), CData/*7:0*/(&  rd_id), QData/*63:0*/(&  rd_value)[1], const CData/*7:0*/ rd_ready) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    VTest::__Vdpiimwrap_Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi__DOT__VTAMemDPI__Vdpioc2_TOP\n"); );
     // Body
     unsigned char rd_req_valid__Vcvt;
-    for (size_t rd_req_valid__Vidx = 0; rd_req_valid__Vidx < 1; ++rd_req_valid__Vidx) rd_req_valid__Vcvt = rd_req_valid;
+    rd_req_valid__Vcvt = rd_req_valid;
     unsigned char rd_req_len__Vcvt;
-    for (size_t rd_req_len__Vidx = 0; rd_req_len__Vidx < 1; ++rd_req_len__Vidx) rd_req_len__Vcvt = rd_req_len;
+    rd_req_len__Vcvt = rd_req_len;
     unsigned char rd_req_id__Vcvt;
-    for (size_t rd_req_id__Vidx = 0; rd_req_id__Vidx < 1; ++rd_req_id__Vidx) rd_req_id__Vcvt = rd_req_id;
+    rd_req_id__Vcvt = rd_req_id;
     unsigned long long rd_req_addr__Vcvt;
-    for (size_t rd_req_addr__Vidx = 0; rd_req_addr__Vidx < 1; ++rd_req_addr__Vidx) rd_req_addr__Vcvt = rd_req_addr;
+    rd_req_addr__Vcvt = rd_req_addr;
     unsigned char wr_req_valid__Vcvt;
-    for (size_t wr_req_valid__Vidx = 0; wr_req_valid__Vidx < 1; ++wr_req_valid__Vidx) wr_req_valid__Vcvt = wr_req_valid;
+    wr_req_valid__Vcvt = wr_req_valid;
     unsigned char wr_req_len__Vcvt;
-    for (size_t wr_req_len__Vidx = 0; wr_req_len__Vidx < 1; ++wr_req_len__Vidx) wr_req_len__Vcvt = wr_req_len;
+    wr_req_len__Vcvt = wr_req_len;
     unsigned long long wr_req_addr__Vcvt;
-    for (size_t wr_req_addr__Vidx = 0; wr_req_addr__Vidx < 1; ++wr_req_addr__Vidx) wr_req_addr__Vcvt = wr_req_addr;
+    wr_req_addr__Vcvt = wr_req_addr;
     unsigned char wr_valid__Vcvt;
-    for (size_t wr_valid__Vidx = 0; wr_valid__Vidx < 1; ++wr_valid__Vidx) wr_valid__Vcvt = wr_valid;
-    static const int wr_value__Vopenprops__ulims[2] = {0, 0};
-    static const VerilatedVarProps wr_value__Vopenprops(VLVT_UINT64, VLVD_IN|VLVF_DPI_CLAY, VerilatedVarProps::Packed(), 63, 0, VerilatedVarProps::Unpacked(), 1, wr_value__Vopenprops__ulims);
+    wr_valid__Vcvt = wr_valid;
+    static const VerilatedVarProps wr_value__Vopenprops(VLVT_UINT64, VLVD_IN|VLVF_DPI_CLAY, VerilatedVarProps::Packed(), 63, 0, VerilatedVarProps::Unpacked(), 0, 0);
     VerilatedDpiOpenVar wr_value__Vopenarray (&wr_value__Vopenprops, &wr_value);
     unsigned long long wr_strb__Vcvt;
-    for (size_t wr_strb__Vidx = 0; wr_strb__Vidx < 1; ++wr_strb__Vidx) wr_strb__Vcvt = wr_strb;
+    wr_strb__Vcvt = wr_strb;
     unsigned char rd_valid__Vcvt;
     unsigned char rd_id__Vcvt;
-    static const int rd_value__Vopenprops__ulims[2] = {0, 0};
-    static const VerilatedVarProps rd_value__Vopenprops(VLVT_UINT64, VLVD_OUT|VLVF_DPI_CLAY, VerilatedVarProps::Packed(), 63, 0, VerilatedVarProps::Unpacked(), 1, rd_value__Vopenprops__ulims);
+    static const VerilatedVarProps rd_value__Vopenprops(VLVT_UINT64, VLVD_OUT|VLVF_DPI_CLAY, VerilatedVarProps::Packed(), 63, 0, VerilatedVarProps::Unpacked(), 0, 0);
     VerilatedDpiOpenVar rd_value__Vopenarray (&rd_value__Vopenprops, &rd_value);
     unsigned char rd_ready__Vcvt;
-    for (size_t rd_ready__Vidx = 0; rd_ready__Vidx < 1; ++rd_ready__Vidx) rd_ready__Vcvt = rd_ready;
+    rd_ready__Vcvt = rd_ready;
     VTAMemDPI(rd_req_valid__Vcvt, rd_req_len__Vcvt, rd_req_id__Vcvt, rd_req_addr__Vcvt, wr_req_valid__Vcvt, wr_req_len__Vcvt, wr_req_addr__Vcvt, wr_valid__Vcvt, &wr_value__Vopenarray, wr_strb__Vcvt, &rd_valid__Vcvt, &rd_id__Vcvt, &rd_value__Vopenarray, rd_ready__Vcvt);
     rd_valid = (0xffU & rd_valid__Vcvt);
     rd_id = (0xffU & rd_id__Vcvt);
@@ -138,7 +132,7 @@ VL_INLINE_OPT void VTest::__Vdpiimwrap_Test__DOT__sim_shell__DOT__mod_mem__DOT__
 
 VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    VTest::_sequent__TOP__2\n"); );
-    VTest* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Variables
     CData/*7:0*/ __Vtask_Test__DOT__sim_shell__DOT__mod_host__DOT__host_dpi__DOT__VTAHostDPI__1__req_valid;
     CData/*7:0*/ __Vtask_Test__DOT__sim_shell__DOT__mod_host__DOT__host_dpi__DOT__VTAHostDPI__1__req_opcode;
@@ -1332,7 +1326,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         __Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__tensorFile_0__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         __Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__tensorFile_0__v0 = 1U;
         __Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__tensorFile_0__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__state)
@@ -1346,7 +1340,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         __Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__tensorFile_1__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         __Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__tensorFile_1__v0 = 1U;
         __Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__tensorFile_1__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__state)
@@ -1442,7 +1436,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         __Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_15__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         __Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_15__v0 = 1U;
         __Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_15__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1456,7 +1450,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         __Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_14__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         __Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_14__v0 = 1U;
         __Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_14__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1470,7 +1464,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         __Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_13__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         __Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_13__v0 = 1U;
         __Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_13__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1484,7 +1478,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         __Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_5__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         __Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_5__v0 = 1U;
         __Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_5__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1498,7 +1492,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_2__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_2__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_2__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1512,7 +1506,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_7__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_7__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_7__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1526,7 +1520,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_4__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_4__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_4__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1540,7 +1534,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_1__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_1__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_1__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1554,7 +1548,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_0__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_0__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_0__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1568,7 +1562,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_3__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_3__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_3__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1582,7 +1576,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_9__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_9__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_9__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1596,7 +1590,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_6__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_6__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_6__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1610,7 +1604,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_10__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_10__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_10__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1624,7 +1618,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_11__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_11__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_11__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1638,7 +1632,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_12__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_12__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_12__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1652,7 +1646,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_16__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_16__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_16__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1666,7 +1660,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_17__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_17__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_17__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1680,7 +1674,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_18__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_18__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_18__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1694,7 +1688,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_19__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_19__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_19__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1708,7 +1702,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_20__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_20__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_20__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1722,7 +1716,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_21__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_21__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_21__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1736,7 +1730,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_22__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_22__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_22__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1750,7 +1744,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_23__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_23__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_23__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1764,7 +1758,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_24__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_24__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_24__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1778,7 +1772,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_25__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_25__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_25__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1792,7 +1786,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_26__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_26__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_26__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1806,7 +1800,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_27__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_27__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_27__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1820,7 +1814,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_28__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_28__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_28__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1834,7 +1828,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_29__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_29__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_29__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1848,7 +1842,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_30__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_30__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_30__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1862,7 +1856,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_31__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_31__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_31__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -1876,7 +1870,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_8__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0
-                : 0ULL);
+                : VL_ULL(0));
         vlTOPp->__Vdlyvset__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_8__v0 = 1U;
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__tensorFile_8__v0 
             = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__state)
@@ -2045,57 +2039,54 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvdim0__Test__DOT__vta_shell__DOT__core__DOT__store__DOT__inst_q__DOT__ram__v0 
             = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__inst_q__DOT__enq_ptr_value;
     }
-    if (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_valid_reset_REG) {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_15 = 0U;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_14 = 0U;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_13 = 0U;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_12 = 0U;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_11 = 0U;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_10 = 0U;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_9 = 0U;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_8 = 0U;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_7 = 0U;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_6 = 0U;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_1 = 0U;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_5 = 0U;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_2 = 0U;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_3 = 0U;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_0 = 0U;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_4 = 0U;
-    } else {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_15 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_15;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_14 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_14;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_13 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_13;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_12 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_12;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_11 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_11;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_10 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_10;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_9 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_9;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_8 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_8;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_7 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_7;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_6 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_6;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_1 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_1;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_5 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_5;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_2 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_2;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_3 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_3;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_0 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_0;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_4 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_4;
-    }
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_15 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_valid_reset_REG)
+            ? 0U : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_15);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_14 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_valid_reset_REG)
+            ? 0U : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_14);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_13 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_valid_reset_REG)
+            ? 0U : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_13);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_12 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_valid_reset_REG)
+            ? 0U : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_12);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_11 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_valid_reset_REG)
+            ? 0U : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_11);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_10 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_valid_reset_REG)
+            ? 0U : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_10);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_9 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_valid_reset_REG)
+            ? 0U : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_9);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_8 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_valid_reset_REG)
+            ? 0U : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_8);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_7 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_valid_reset_REG)
+            ? 0U : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_7);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_6 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_valid_reset_REG)
+            ? 0U : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_6);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_1 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_valid_reset_REG)
+            ? 0U : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_1);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_5 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_valid_reset_REG)
+            ? 0U : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_5);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_2 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_valid_reset_REG)
+            ? 0U : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_2);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_3 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_valid_reset_REG)
+            ? 0U : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_3);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_0 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_valid_reset_REG)
+            ? 0U : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_0);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_4 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_valid_reset_REG)
+            ? 0U : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__add_0_4);
     if (((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vme__DOT___any_cmd_ready_T_3) 
          | (IData)(vlTOPp->Test__DOT__vta_shell__DOT__vme__DOT__VMEcmd_Qs_4_io_deq_ready))) {
         vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__vme__DOT__vmeTag_array_client_id__v0 
@@ -2249,29 +2240,26 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
                                      : 0U)) : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__fillPadding__DOT___GEN_24)));
     if (((~ (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__full)) 
          & (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer_io_enq_valid))) {
-        if ((0U != (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue_io_count))) {
-            vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[0U] 
-                = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem
-                [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem_io_rd_data_MPORT_addr_pipe_0][0U];
-            vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[1U] 
-                = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem
-                [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem_io_rd_data_MPORT_addr_pipe_0][1U];
-            vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[2U] 
-                = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem
-                [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem_io_rd_data_MPORT_addr_pipe_0][2U];
-            vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[3U] 
-                = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem
-                [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem_io_rd_data_MPORT_addr_pipe_0][3U];
-        } else {
-            vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[0U] 
-                = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q_io_enq_bits[0U];
-            vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[1U] 
-                = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q_io_enq_bits[1U];
-            vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[2U] 
-                = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q_io_enq_bits[2U];
-            vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[3U] 
-                = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q_io_enq_bits[3U];
-        }
+        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[0U] 
+            = ((0U != (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue_io_count))
+                ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem
+               [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem_io_rd_data_MPORT_addr_pipe_0][0U]
+                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q_io_enq_bits[0U]);
+        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[1U] 
+            = ((0U != (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue_io_count))
+                ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem
+               [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem_io_rd_data_MPORT_addr_pipe_0][1U]
+                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q_io_enq_bits[1U]);
+        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[2U] 
+            = ((0U != (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue_io_count))
+                ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem
+               [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem_io_rd_data_MPORT_addr_pipe_0][2U]
+                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q_io_enq_bits[2U]);
+        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[3U] 
+            = ((0U != (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue_io_count))
+                ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem
+               [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem_io_rd_data_MPORT_addr_pipe_0][3U]
+                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q_io_enq_bits[3U]);
         if ((2U >= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__enq_ptr_value))) {
             vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram__v0[0U] 
                 = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[0U];
@@ -2562,7 +2550,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
                 : 0U);
     }
     if (vlTOPp->reset) {
-        vlTOPp->__Vdly__Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__ar_len = 0ULL;
+        vlTOPp->__Vdly__Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__ar_len = VL_ULL(0);
     } else {
         if (vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT___T_4) {
             if (vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__dpiReqQueue_io_deq_ready) {
@@ -2572,7 +2560,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         } else {
             if (vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__rstate) {
                 if (((IData)(vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi_dpi_rd_valid) 
-                     & (0ULL != vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__ar_len))) {
+                     & (VL_ULL(0) != vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__ar_len))) {
                     vlTOPp->__Vdly__Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__ar_len 
                         = vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT___ar_len_T_1;
                 }
@@ -2585,7 +2573,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
         if (vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__rstate) {
             if (vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__rstate) {
                 if (((IData)(vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi_dpi_rd_valid) 
-                     & (1ULL == vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__ar_len))) {
+                     & (VL_ULL(1) == vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__ar_len))) {
                     vlTOPp->__Vdly__Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__rstate = 0U;
                 }
             }
@@ -3323,29 +3311,26 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
     }
     if (((~ (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__full)) 
          & (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer_io_enq_valid))) {
-        if ((0U != (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue_io_count))) {
-            vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[0U] 
-                = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem
-                [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem_io_rd_data_MPORT_addr_pipe_0][0U];
-            vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[1U] 
-                = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem
-                [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem_io_rd_data_MPORT_addr_pipe_0][1U];
-            vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[2U] 
-                = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem
-                [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem_io_rd_data_MPORT_addr_pipe_0][2U];
-            vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[3U] 
-                = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem
-                [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem_io_rd_data_MPORT_addr_pipe_0][3U];
-        } else {
-            vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[0U] 
-                = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[0U];
-            vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[1U] 
-                = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[1U];
-            vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[2U] 
-                = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[2U];
-            vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[3U] 
-                = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[3U];
-        }
+        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[0U] 
+            = ((0U != (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue_io_count))
+                ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem
+               [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem_io_rd_data_MPORT_addr_pipe_0][0U]
+                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[0U]);
+        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[1U] 
+            = ((0U != (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue_io_count))
+                ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem
+               [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem_io_rd_data_MPORT_addr_pipe_0][1U]
+                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[1U]);
+        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[2U] 
+            = ((0U != (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue_io_count))
+                ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem
+               [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem_io_rd_data_MPORT_addr_pipe_0][2U]
+                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[2U]);
+        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[3U] 
+            = ((0U != (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue_io_count))
+                ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem
+               [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0__DOT__mem_io_rd_data_MPORT_addr_pipe_0][3U]
+                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[3U]);
         if ((2U >= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__enq_ptr_value))) {
             vlTOPp->__Vdlyvval__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram__v0[0U] 
                 = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vlvbound2[0U];
@@ -3410,7 +3395,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__2(VTest__Syms* __restrict vlSymsp) {
 
 VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    VTest::_sequent__TOP__3\n"); );
-    VTest* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Variables
     CData/*7:0*/ __Vtask_Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi__DOT__VTAMemDPI__Vdpioc2__2__rd_valid;
     CData/*7:0*/ __Vtask_Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi__DOT__VTAMemDPI__Vdpioc2__2__rd_id;
@@ -4109,37 +4094,34 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                                          + (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__value_1)))
                              : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__value_1))));
     }
-    if ((3U <= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))) {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[0U] 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT___RAND_1[0U];
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[1U] 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT___RAND_1[1U];
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[2U] 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT___RAND_1[2U];
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[3U] 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT___RAND_1[3U];
-    } else {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[0U] 
-            = ((2U >= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[0U] 
+        = ((3U <= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT___RAND_1[0U]
+            : ((2U >= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram
                [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value][0U]
-                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vxrand1[0U]);
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[1U] 
-            = ((2U >= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))
+                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vxrand1[0U]));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[1U] 
+        = ((3U <= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT___RAND_1[1U]
+            : ((2U >= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram
                [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value][1U]
-                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vxrand1[1U]);
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[2U] 
-            = ((2U >= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))
+                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vxrand1[1U]));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[2U] 
+        = ((3U <= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT___RAND_1[2U]
+            : ((2U >= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram
                [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value][2U]
-                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vxrand1[2U]);
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[3U] 
-            = ((2U >= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))
+                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vxrand1[2U]));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[3U] 
+        = ((3U <= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT___RAND_1[3U]
+            : ((2U >= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram
                [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value][3U]
-                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vxrand1[3U]);
-    }
+                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vxrand1[3U]));
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm_io_acc_rd_0_data_valid 
         = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__rvalid) 
            & (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm_io_acc_rd_0_data_valid_REG));
@@ -4230,22 +4212,16 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
     }
     vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi_dpi_rd_bits_id 
         = vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi__DOT_____05Frd_id;
-    if (vlTOPp->reset) {
-        vlTOPp->Test__DOT__vta_shell__DOT__vme__DOT__io_vme_rd_2_data_bits_data_REG = 0ULL;
-        vlTOPp->Test__DOT__vta_shell__DOT__vme__DOT__io_vme_rd_3_data_bits_data_REG = 0ULL;
-        vlTOPp->Test__DOT__vta_shell__DOT__vme__DOT__io_vme_rd_4_data_bits_data_REG = 0ULL;
-    } else {
-        vlTOPp->Test__DOT__vta_shell__DOT__vme__DOT__io_vme_rd_2_data_bits_data_REG 
-            = vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi_dpi_rd_bits_data;
-        vlTOPp->Test__DOT__vta_shell__DOT__vme__DOT__io_vme_rd_3_data_bits_data_REG 
-            = vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi_dpi_rd_bits_data;
-        vlTOPp->Test__DOT__vta_shell__DOT__vme__DOT__io_vme_rd_4_data_bits_data_REG 
-            = vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi_dpi_rd_bits_data;
-    }
+    vlTOPp->Test__DOT__vta_shell__DOT__vme__DOT__io_vme_rd_2_data_bits_data_REG 
+        = ((IData)(vlTOPp->reset) ? VL_ULL(0) : vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi_dpi_rd_bits_data);
+    vlTOPp->Test__DOT__vta_shell__DOT__vme__DOT__io_vme_rd_3_data_bits_data_REG 
+        = ((IData)(vlTOPp->reset) ? VL_ULL(0) : vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi_dpi_rd_bits_data);
+    vlTOPp->Test__DOT__vta_shell__DOT__vme__DOT__io_vme_rd_4_data_bits_data_REG 
+        = ((IData)(vlTOPp->reset) ? VL_ULL(0) : vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi_dpi_rd_bits_data);
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__fillPadding__DOT___zpRowIdx_T_1 
         = (0xffffffU & ((IData)(1U) + vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__fillPadding__DOT__zpRowIdx));
     vlTOPp->Test__DOT__vta_shell__DOT__vme__DOT__io_vme_rd_1_data_bits_data_REG 
-        = ((IData)(vlTOPp->reset) ? 0ULL : vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi_dpi_rd_bits_data);
+        = ((IData)(vlTOPp->reset) ? VL_ULL(0) : vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi_dpi_rd_bits_data);
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute_io_out_wr_0_bits_idx 
         = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__io_out_wr_0_bits_idx_REG)
             ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__wrpipeNs__DOT__io_deq_b)
@@ -5053,7 +5029,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
         }
     }
     vlTOPp->Test__DOT__vta_shell__DOT__vme__DOT__io_vme_rd_0_data_bits_data_REG 
-        = ((IData)(vlTOPp->reset) ? 0ULL : vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi_dpi_rd_bits_data);
+        = ((IData)(vlTOPp->reset) ? VL_ULL(0) : vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi_dpi_rd_bits_data);
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__readData__DOT___T_5 
         = (1U & ((~ (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__readData__DOT__vmeTagDecodeLastValidNext)) 
                  | ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__readData__DOT__vmeTagDecodeLastValidNext) 
@@ -5252,73 +5228,70 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
         = (((0U != (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__fillPadding__DOT__zpState)) 
             & (5U != (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__fillPadding__DOT__zpState))) 
            & (~ (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeDataFirePipe)));
-    if (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_bypass_cond) {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_0;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_1 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_1;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_2 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_2;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_3 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_3;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_4 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_4;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_5 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_5;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_6 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_6;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_7 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_7;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_8 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_8;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_9 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_9;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_10 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_10;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_11 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_11;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_12 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_12;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_13 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_13;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_14 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_14;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_15 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_15;
-    } else {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[0U];
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_1 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[1U];
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_2 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[2U];
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_3 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[3U];
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_4 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[4U];
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_5 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[5U];
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_6 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[6U];
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_7 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[7U];
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_8 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[8U];
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_9 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[9U];
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_10 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[0xaU];
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_11 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[0xbU];
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_12 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[0xcU];
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_13 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[0xdU];
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_14 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[0xeU];
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_15 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[0xfU];
-    }
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_bypass_cond)
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_0
+            : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[0U]);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_1 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_bypass_cond)
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_1
+            : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[1U]);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_2 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_bypass_cond)
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_2
+            : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[2U]);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_3 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_bypass_cond)
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_3
+            : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[3U]);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_4 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_bypass_cond)
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_4
+            : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[4U]);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_5 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_bypass_cond)
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_5
+            : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[5U]);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_6 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_bypass_cond)
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_6
+            : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[6U]);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_7 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_bypass_cond)
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_7
+            : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[7U]);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_8 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_bypass_cond)
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_8
+            : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[8U]);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_9 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_bypass_cond)
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_9
+            : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[9U]);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_10 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_bypass_cond)
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_10
+            : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[0xaU]);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_11 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_bypass_cond)
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_11
+            : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[0xbU]);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_12 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_bypass_cond)
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_12
+            : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[0xcU]);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_13 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_bypass_cond)
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_13
+            : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[0xdU]);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_14 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_bypass_cond)
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_14
+            : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[0xeU]);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__byp_15 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0_io_bypass_cond)
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__last_acc_write_0_15
+            : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT___T_36[0xfU]);
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__full 
         = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ptr_match) 
            & (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__maybe_full));
@@ -5493,25 +5466,28 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
         = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute_io_finish;
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT__xfer_init_addr 
         = ((QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vcr__DOT__reg_5)) 
-           | (0xffffffffULL & ((QData)((IData)(((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__inst_q__DOT__ram_io_deq_bits_MPORT_data[1U] 
-                                                 << 6U) 
-                                                | (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__inst_q__DOT__ram_io_deq_bits_MPORT_data[0U] 
-                                                   >> 0x1aU)))) 
-                               << 4U)));
+           | (VL_ULL(0xffffffff) & ((QData)((IData)(
+                                                    ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__inst_q__DOT__ram_io_deq_bits_MPORT_data[1U] 
+                                                      << 6U) 
+                                                     | (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__inst_q__DOT__ram_io_deq_bits_MPORT_data[0U] 
+                                                        >> 0x1aU)))) 
+                                    << 4U)));
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT__xfer_init_addr 
         = ((QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vcr__DOT__reg_6)) 
-           | (0xffffffffULL & ((QData)((IData)(((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__inst_q__DOT__ram_io_deq_bits_MPORT_data[1U] 
-                                                 << 6U) 
-                                                | (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__inst_q__DOT__ram_io_deq_bits_MPORT_data[0U] 
-                                                   >> 0x1aU)))) 
-                               << 8U)));
+           | (VL_ULL(0xffffffff) & ((QData)((IData)(
+                                                    ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__inst_q__DOT__ram_io_deq_bits_MPORT_data[1U] 
+                                                      << 6U) 
+                                                     | (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__inst_q__DOT__ram_io_deq_bits_MPORT_data[0U] 
+                                                        >> 0x1aU)))) 
+                                    << 8U)));
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xfer_init_addr 
         = ((QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vcr__DOT__reg_8)) 
-           | (0xffffffffULL & ((QData)((IData)(((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__inst_q__DOT__ram_io_deq_bits_MPORT_data[1U] 
-                                                 << 6U) 
-                                                | (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__inst_q__DOT__ram_io_deq_bits_MPORT_data[0U] 
-                                                   >> 0x1aU)))) 
-                               << 4U)));
+           | (VL_ULL(0xffffffff) & ((QData)((IData)(
+                                                    ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__inst_q__DOT__ram_io_deq_bits_MPORT_data[1U] 
+                                                      << 6U) 
+                                                     | (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__inst_q__DOT__ram_io_deq_bits_MPORT_data[0U] 
+                                                        >> 0x1aU)))) 
+                                    << 4U)));
     if ((1U & ((~ vlTOPp->Test__DOT__vta_shell__DOT__vcr__DOT__reg_0) 
                | (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute_io_finish)))) {
         vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__ecounters__DOT__acc_wr_count = 0U;
@@ -5548,19 +5524,16 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
     vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi_dpi_rd_bits_data 
         = vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi__DOT_____05Frd_value
         [0U];
-    if (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__fillPadding_io_tensorIdx_valid) {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__wdataTensInstr_0 = 0ULL;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__waddrTensInstrTmp 
-            = (0x7ffU & ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__fillPadding__DOT__zpDestRowOffset) 
-                         + vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__fillPadding__DOT__zpColIdx));
-    } else {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__wdataTensInstr_0 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeDataBitsPipe_data;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__waddrTensInstrTmp 
-            = (0x7ffU & (0xfffffU & ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__readData__DOT___T_5)
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__wdataTensInstr_0 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__fillPadding_io_tensorIdx_valid)
+            ? VL_ULL(0) : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeDataBitsPipe_data);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__waddrTensInstrTmp 
+        = (0x7ffU & ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__fillPadding_io_tensorIdx_valid)
+                      ? ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__fillPadding__DOT__zpDestRowOffset) 
+                         + vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__fillPadding__DOT__zpColIdx)
+                      : (0xfffffU & ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__readData__DOT___T_5)
                                       ? (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeDataBitsPipe_tag 
-                                         >> 1U) : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__readData__DOT__rdDataDestIdxNext))));
-    }
+                                         >> 1U) : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__readData__DOT__rdDataDestIdxNext)))));
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__readData__DOT___T_5 
         = (1U & ((~ (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__readData__DOT__vmeTagDecodeLastValidNext)) 
                  | ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__readData__DOT__vmeTagDecodeLastValidNext) 
@@ -5623,17 +5596,14 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                                               << 0x10U) 
                                              | (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__fillPadding_io_inst_REG[2U] 
                                                 >> 0x10U))));
-    if (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc_io_tensor_rd_0_idx_REG) {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc_io_tensor_rd_0_idx_valid 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__io_acc_rd_0_idx_valid_REG;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc_io_tensor_rd_0_idx_bits 
-            = (0x7ffU & (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__io_acc_rd_0_idx_bits_REG));
-    } else {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc_io_tensor_rd_0_idx_valid 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__io_acc_rd_0_idx_valid_REG;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc_io_tensor_rd_0_idx_bits 
-            = (0x7ffU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__io_acc_rd_0_idx_bits_REG);
-    }
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc_io_tensor_rd_0_idx_valid 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc_io_tensor_rd_0_idx_REG)
+            ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__io_acc_rd_0_idx_valid_REG)
+            : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__io_acc_rd_0_idx_valid_REG));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc_io_tensor_rd_0_idx_bits 
+        = (0x7ffU & ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc_io_tensor_rd_0_idx_REG)
+                      ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__io_acc_rd_0_idx_bits_REG)
+                      : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__io_acc_rd_0_idx_bits_REG));
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__src_valid_r1 
         = ((~ (IData)(vlTOPp->reset)) & (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator_io_src_valid));
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__valid_r1 
@@ -5642,19 +5612,16 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
         = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__src_i;
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__dst_idx_r1 
         = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__dst_i;
-    if (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__fillPadding_io_tensorIdx_valid) {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__wdataTensInstr_0 = 0ULL;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__waddrTensInstrTmp 
-            = (0x7ffU & ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__fillPadding__DOT__zpDestRowOffset) 
-                         + vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__fillPadding__DOT__zpColIdx));
-    } else {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__wdataTensInstr_0 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeDataBitsPipe_data;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__waddrTensInstrTmp 
-            = (0x7ffU & (0x3ffffU & ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__readData__DOT___T_5)
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__wdataTensInstr_0 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__fillPadding_io_tensorIdx_valid)
+            ? VL_ULL(0) : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeDataBitsPipe_data);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__waddrTensInstrTmp 
+        = (0x7ffU & ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__fillPadding_io_tensorIdx_valid)
+                      ? ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__fillPadding__DOT__zpDestRowOffset) 
+                         + vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__fillPadding__DOT__zpColIdx)
+                      : (0x3ffffU & ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__readData__DOT___T_5)
                                       ? (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeDataBitsPipe_tag 
-                                         >> 3U) : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__readData__DOT__rdDataDestIdxNext))));
-    }
+                                         >> 3U) : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__readData__DOT__rdDataDestIdxNext)))));
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__reset_pipe__DOT__io_deq_outPipe_valid 
         = ((~ (IData)(vlTOPp->reset)) & (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__reset_pipe__DOT__io_deq_v));
     if (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__reset_pipe__DOT__io_deq_v) {
@@ -5840,24 +5807,20 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT___GEN_8 
         = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vme_io_vme_rd_0_data_valid)
             ? 3U : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state));
-    if ((3U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))) {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT___GEN_27 
-            = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vme_io_vme_rd_0_data_valid)
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT___GEN_27 
+        = ((3U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
+            ? ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vme_io_vme_rd_0_data_valid)
                 ? (((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__countNext) 
                     == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__ilen))
-                    ? 4U : 2U) : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q_io_enq_valid 
-            = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vme_io_vme_rd_0_data_valid) 
-               & 1U);
-    } else {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT___GEN_27 
-            = ((4U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
+                    ? 4U : 2U) : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
+            : ((4U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
                 ? ((0U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__countNext))
                     ? ((0U == vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem)
                         ? 0U : 1U) : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
-                : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q_io_enq_valid = 0U;
-    }
+                : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state)));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q_io_enq_valid 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vme_io_vme_rd_0_data_valid) 
+           & (3U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state)));
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__loadUop__DOT__loadUop__DOT__tensorLoad__DOT__readData__DOT___GEN_0 
         = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vme_io_vme_rd_1_data_valid) 
            | (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__loadUop__DOT__loadUop__DOT__tensorLoad__DOT__readData__DOT__vmeTagDecodeLastValidNext));
@@ -6058,19 +6021,16 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
             }
         }
     }
-    if (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__fillPadding_io_tensorIdx_valid) {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0 = 0ULL;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__waddrTensInstrTmp 
-            = (0x3ffU & ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__fillPadding__DOT__zpDestRowOffset) 
-                         + vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__fillPadding__DOT__zpColIdx));
-    } else {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeDataBitsPipe_data;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__waddrTensInstrTmp 
-            = (0x3ffU & (0xffffU & ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__readData__DOT___T_5)
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__wdataTensInstr_0 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__fillPadding_io_tensorIdx_valid)
+            ? VL_ULL(0) : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeDataBitsPipe_data);
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__waddrTensInstrTmp 
+        = (0x3ffU & ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__fillPadding_io_tensorIdx_valid)
+                      ? ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__fillPadding__DOT__zpDestRowOffset) 
+                         + vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__fillPadding__DOT__zpColIdx)
+                      : (0xffffU & ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__readData__DOT___T_5)
                                      ? (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeDataBitsPipe_tag 
-                                        >> 5U) : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__readData__DOT__rdDataDestIdxNext))));
-    }
+                                        >> 5U) : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__readData__DOT__rdDataDestIdxNext)))));
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer_io_enq_valid 
         = ((0U != (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue_io_count))
             ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue_io_deq_valid)
@@ -6097,7 +6057,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
         = (1U & (IData)(vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi__DOT_____05Frd_valid));
     if (vlTOPp->reset) {
         vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi_dpi_rd_valid = 0U;
-        vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi_dpi_rd_bits_data = 0ULL;
+        vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi_dpi_rd_bits_data = VL_ULL(0);
         vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi_dpi_rd_bits_id = 0U;
     } else {
         vlTOPp->__Vdpiimwrap_Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi__DOT__VTAMemDPI__Vdpioc2_TOP(vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__dpiReqQueue_io_deq_ready, 
@@ -6123,7 +6083,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                                                                                 == (IData)(vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__wstate))), (IData)(vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__aw_len), (QData)((IData)(vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__aw_addr)), 
                                                                                 ((2U 
                                                                                 == (IData)(vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__wstate)) 
-                                                                                & (IData)(vlTOPp->Test__DOT__vta_shell__DOT__vme_io_mem_w_valid)), vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi__DOT_____05Fwr_value, 0xffULL, __Vtask_Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi__DOT__VTAMemDPI__Vdpioc2__2__rd_valid, __Vtask_Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi__DOT__VTAMemDPI__Vdpioc2__2__rd_id, __Vtask_Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi__DOT__VTAMemDPI__Vdpioc2__2__rd_value, 1U);
+                                                                                & (IData)(vlTOPp->Test__DOT__vta_shell__DOT__vme_io_mem_w_valid)), vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi__DOT_____05Fwr_value, VL_ULL(0xff), __Vtask_Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi__DOT__VTAMemDPI__Vdpioc2__2__rd_valid, __Vtask_Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi__DOT__VTAMemDPI__Vdpioc2__2__rd_id, __Vtask_Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi__DOT__VTAMemDPI__Vdpioc2__2__rd_value, 1U);
         vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi__DOT_____05Frd_valid 
             = __Vtask_Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi__DOT__VTAMemDPI__Vdpioc2__2__rd_valid;
         vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi__DOT_____05Frd_id 
@@ -6427,101 +6387,106 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__ram0_io_rd_en 
         = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__do_deq) 
            | (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__memoryQueue__DOT__firstRead));
-    if ((0U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))) {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT___GEN_42 
-            = (0x1ffffffffULL & ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__pulse)
-                                  ? ((0x100ULL > (0x1ffffffffULL 
-                                                  & (((QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vcr__DOT__reg_2)) 
-                                                      << 1U) 
-                                                     - 1ULL)))
-                                      ? 0ULL : ((((QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vcr__DOT__reg_2)) 
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT___GEN_42 
+        = (VL_ULL(0x1ffffffff) & ((0U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
+                                   ? ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__pulse)
+                                       ? ((VL_ULL(0x100) 
+                                           > (VL_ULL(0x1ffffffff) 
+                                              & (((QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vcr__DOT__reg_2)) 
                                                   << 1U) 
-                                                 - 1ULL) 
-                                                - 0x100ULL))
-                                  : (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT___GEN_40 
-            = (0x1ffffffffULL & ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__pulse)
-                                  ? ((0x100ULL > (0x1ffffffffULL 
-                                                  & (((QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vcr__DOT__reg_2)) 
-                                                      << 1U) 
-                                                     - 1ULL)))
-                                      ? (((QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vcr__DOT__reg_2)) 
-                                          << 1U) - 1ULL)
-                                      : 0xffULL) : (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__rlen))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT___GEN_41 
-            = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__pulse)
-                ? ((0x100ULL > (0x1ffffffffULL & (((QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vcr__DOT__reg_2)) 
-                                                   << 1U) 
-                                                  - 1ULL)))
-                    ? (QData)((IData)((0xffffffffULL 
-                                       & ((((QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vcr__DOT__reg_2)) 
-                                            << 1U) 
-                                           - 1ULL) 
-                                          >> 1U))))
-                    : 0x7fULL) : (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__ilen)));
-    } else {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT___GEN_42 
-            = (0x1ffffffffULL & (QData)((IData)(((1U 
-                                                  == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
-                                                  ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem
-                                                  : 
-                                                 ((2U 
-                                                   == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
-                                                   ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem
-                                                   : 
-                                                  ((3U 
-                                                    == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
-                                                    ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem
-                                                    : 
-                                                   ((4U 
-                                                     == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
-                                                     ? 
-                                                    ((0U 
-                                                      == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__countNext))
-                                                      ? 
-                                                     ((0U 
-                                                       == vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem)
+                                                 - VL_ULL(1))))
+                                           ? VL_ULL(0)
+                                           : ((((QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vcr__DOT__reg_2)) 
+                                                << 1U) 
+                                               - VL_ULL(1)) 
+                                              - VL_ULL(0x100)))
+                                       : (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem)))
+                                   : (QData)((IData)(
+                                                     ((1U 
+                                                       == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
                                                        ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem
                                                        : 
-                                                      ((0x100U 
-                                                        > vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem)
-                                                        ? 0U
+                                                      ((2U 
+                                                        == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
+                                                        ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem
                                                         : 
-                                                       (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem 
-                                                        - (IData)(0x100U))))
-                                                      : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem)
-                                                     : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem)))))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT___GEN_40 
-            = (0x1ffffffffULL & (QData)((IData)(((1U 
-                                                  == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
-                                                  ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__rlen)
-                                                  : 
-                                                 ((2U 
-                                                   == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
-                                                   ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__rlen)
-                                                   : 
-                                                  ((3U 
-                                                    == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
-                                                    ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__rlen)
-                                                    : 
-                                                   ((4U 
-                                                     == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
-                                                     ? 
-                                                    ((0U 
-                                                      == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__countNext))
-                                                      ? 
-                                                     ((0U 
-                                                       == vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem)
+                                                       ((3U 
+                                                         == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
+                                                         ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem
+                                                         : 
+                                                        ((4U 
+                                                          == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
+                                                          ? 
+                                                         ((0U 
+                                                           == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__countNext))
+                                                           ? 
+                                                          ((0U 
+                                                            == vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem)
+                                                            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem
+                                                            : 
+                                                           ((0x100U 
+                                                             > vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem)
+                                                             ? 0U
+                                                             : 
+                                                            (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem 
+                                                             - (IData)(0x100U))))
+                                                           : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem)
+                                                          : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem))))))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT___GEN_40 
+        = (VL_ULL(0x1ffffffff) & ((0U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
+                                   ? ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__pulse)
+                                       ? ((VL_ULL(0x100) 
+                                           > (VL_ULL(0x1ffffffff) 
+                                              & (((QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vcr__DOT__reg_2)) 
+                                                  << 1U) 
+                                                 - VL_ULL(1))))
+                                           ? (((QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vcr__DOT__reg_2)) 
+                                               << 1U) 
+                                              - VL_ULL(1))
+                                           : VL_ULL(0xff))
+                                       : (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__rlen)))
+                                   : (QData)((IData)(
+                                                     ((1U 
+                                                       == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
                                                        ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__rlen)
                                                        : 
-                                                      ((0x100U 
-                                                        > vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem)
-                                                        ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem
-                                                        : 0xffU))
-                                                      : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__rlen))
-                                                     : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__rlen))))))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT___GEN_41 
-            = (QData)((IData)(((1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
+                                                      ((2U 
+                                                        == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
+                                                        ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__rlen)
+                                                        : 
+                                                       ((3U 
+                                                         == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
+                                                         ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__rlen)
+                                                         : 
+                                                        ((4U 
+                                                          == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
+                                                          ? 
+                                                         ((0U 
+                                                           == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__inst_q__DOT__queue__DOT__queue__DOT__countNext))
+                                                           ? 
+                                                          ((0U 
+                                                            == vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem)
+                                                            ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__rlen)
+                                                            : 
+                                                           ((0x100U 
+                                                             > vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem)
+                                                             ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__xrem
+                                                             : 0xffU))
+                                                           : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__rlen))
+                                                          : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__rlen)))))))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT___GEN_41 
+        = ((0U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
+            ? ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__pulse)
+                ? ((VL_ULL(0x100) > (VL_ULL(0x1ffffffff) 
+                                     & (((QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vcr__DOT__reg_2)) 
+                                         << 1U) - VL_ULL(1))))
+                    ? (QData)((IData)((VL_ULL(0xffffffff) 
+                                       & ((((QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vcr__DOT__reg_2)) 
+                                            << 1U) 
+                                           - VL_ULL(1)) 
+                                          >> 1U))))
+                    : VL_ULL(0x7f)) : (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__ilen)))
+            : (QData)((IData)(((1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
                                 ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__ilen)
                                 : ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__state))
                                     ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__ilen)
@@ -6543,8 +6508,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                                                         >> 1U))
                                                      : 0x7fU))
                                                 : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__ilen))
-                                            : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__ilen)))))));
-    }
+                                            : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__fetch__DOT__fetch__DOT__ilen))))))));
     vlTOPp->Test__DOT__sim_shell__DOT__mod_host__DOT__host_axi__DOT__state 
         = vlTOPp->__Vdly__Test__DOT__sim_shell__DOT__mod_host__DOT__host_axi__DOT__state;
     vlTOPp->Test__DOT__vta_shell__DOT__vcr__DOT__rstate 
@@ -6571,10 +6535,10 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
             ? ((0U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__set))
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__tensorFile_0_1
                [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__tensorFile_0_1_MPORT_1_addr_pipe_0]
-                : 0ULL) : ((0U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__set))
-                            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__tensorFile_0_0
-                           [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__tensorFile_0_0_MPORT_1_addr_pipe_0]
-                            : 0ULL));
+                : VL_ULL(0)) : ((0U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__set))
+                                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__tensorFile_0_0
+                                [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__tensorFile_0_0_MPORT_1_addr_pipe_0]
+                                 : VL_ULL(0)));
     vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__dpiReqQueue__DOT__ram_len_io_deq_bits_MPORT_data 
         = vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__dpiReqQueue__DOT__ram_len
         [vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__dpiReqQueue__DOT__deq_ptr_value];
@@ -6723,28 +6687,25 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                                      - (IData)(1U))))) 
                   | (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT__commandsDone))
                : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT__commandsDone)));
-    if (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0_io_start) {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT___GEN_23 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT__xfer_init_addr;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT___GEN_22 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT__xfer_init_addr;
-    } else {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT___GEN_23 
-            = (QData)((IData)(((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT___T_14)
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT___GEN_23 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0_io_start)
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT__xfer_init_addr
+            : (QData)((IData)(((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT___T_14)
                                 ? ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT__stride)
                                     ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT__memRow
                                     : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT__rdCmdExtAddrRowBegin)
-                                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT__rdCmdExtAddrRowBegin)));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT___GEN_22 
-            = (QData)((IData)(((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT___T_14)
+                                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT__rdCmdExtAddrRowBegin))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT___GEN_22 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0_io_start)
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT__xfer_init_addr
+            : (QData)((IData)(((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT___T_14)
                                 ? ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT__stride)
                                     ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT__memRow
                                     : (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT__rdCmdExtAddr 
                                        + (0xff8U & 
                                           (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT___GEN_10 
                                            << 3U))))
-                                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT__rdCmdExtAddr)));
-    }
+                                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT__vmeCmd__DOT__rdCmdExtAddr))));
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT___GEN_21 
         = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT___T_14)
             ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT__stride)
@@ -6784,28 +6745,25 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                                      - (IData)(1U))))) 
                   | (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT__commandsDone))
                : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT__commandsDone)));
-    if (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1_io_start) {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT___GEN_23 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT__xfer_init_addr;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT___GEN_22 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT__xfer_init_addr;
-    } else {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT___GEN_23 
-            = (QData)((IData)(((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT___T_14)
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT___GEN_23 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1_io_start)
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT__xfer_init_addr
+            : (QData)((IData)(((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT___T_14)
                                 ? ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT__stride)
                                     ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT__memRow
                                     : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT__rdCmdExtAddrRowBegin)
-                                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT__rdCmdExtAddrRowBegin)));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT___GEN_22 
-            = (QData)((IData)(((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT___T_14)
+                                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT__rdCmdExtAddrRowBegin))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT___GEN_22 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1_io_start)
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT__xfer_init_addr
+            : (QData)((IData)(((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT___T_14)
                                 ? ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT__stride)
                                     ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT__memRow
                                     : (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT__rdCmdExtAddr 
                                        + (0xff8U & 
                                           (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT___GEN_10 
                                            << 3U))))
-                                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT__rdCmdExtAddr)));
-    }
+                                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_1__DOT__tensorLoad__DOT__vmeCmd__DOT__rdCmdExtAddr))));
     vlTOPp->Test__DOT__sim_shell__DOT__mod_host__DOT__host_dpi_dpi_req_valid 
         = (1U & (IData)(vlTOPp->Test__DOT__sim_shell__DOT__mod_host__DOT__host_dpi__DOT_____05Freq_valid));
     vlTOPp->Test__DOT__sim_shell__DOT__mod_host__DOT__host_dpi_dpi_req_addr 
@@ -6870,9 +6828,9 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
     }
     vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT___ar_len_T_1 
         = (vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__ar_len 
-           - 1ULL);
+           - VL_ULL(1));
     vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi_io_axi_r_bits_last 
-        = ((0ULL == vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__ar_len) 
+        = ((VL_ULL(0) == vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__ar_len) 
            & (IData)(vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi_dpi_rd_valid));
     vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__io_dpi_req_aw_valid_REG 
         = (1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__vme__DOT__wstate));
@@ -7051,7 +7009,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
         = (1U & (~ (IData)(vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__rstate)));
     vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT___GEN_2 
         = ((((~ (IData)(vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__dpiReqQueue__DOT__empty)) 
-             & (0ULL != vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__dpiReqQueue__DOT__ram_len_io_deq_bits_MPORT_data)) 
+             & (VL_ULL(0) != vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__dpiReqQueue__DOT__ram_len_io_deq_bits_MPORT_data)) 
             & (0x10U == vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__counter)) 
            | (IData)(vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__rstate));
     vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__dpiReqQueue_io_deq_ready 
@@ -7400,37 +7358,34 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
         = vlTOPp->__Vdly__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__m__DOT__cnt_i;
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__m__DOT__cnt_o 
         = vlTOPp->__Vdly__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__m__DOT__cnt_o;
-    if ((3U <= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))) {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[0U] 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT___RAND_1[0U];
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[1U] 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT___RAND_1[1U];
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[2U] 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT___RAND_1[2U];
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[3U] 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT___RAND_1[3U];
-    } else {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[0U] 
-            = ((2U >= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[0U] 
+        = ((3U <= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT___RAND_1[0U]
+            : ((2U >= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram
                [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value][0U]
-                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vxrand1[0U]);
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[1U] 
-            = ((2U >= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))
+                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vxrand1[0U]));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[1U] 
+        = ((3U <= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT___RAND_1[1U]
+            : ((2U >= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram
                [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value][1U]
-                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vxrand1[1U]);
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[2U] 
-            = ((2U >= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))
+                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vxrand1[1U]));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[2U] 
+        = ((3U <= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT___RAND_1[2U]
+            : ((2U >= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram
                [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value][2U]
-                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vxrand1[2U]);
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[3U] 
-            = ((2U >= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))
+                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vxrand1[2U]));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[3U] 
+        = ((3U <= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT___RAND_1[3U]
+            : ((2U >= (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value))
                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram
                [vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__deq_ptr_value][3U]
-                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vxrand1[3U]);
-    }
+                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT____Vxrand1[3U]));
     vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__dpiReqQueue__DOT__do_enq 
         = ((~ (IData)(vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__dpiReqQueue__DOT__full)) 
            & (IData)(vlTOPp->Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_axi__DOT__dpiReqQueue_io_enq_valid));
@@ -7520,19 +7475,20 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
         = (0x7ffU & ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__src_i) 
                      + (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[3U] 
                         >> 1U)));
-    if (((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__cnt_o) 
-         != (0x3fffU & (((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[2U] 
-                          << 0x1dU) | (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[1U] 
-                                       >> 3U)) - (IData)(1U))))) {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT___GEN_7 
-            = (0x3fffU & ((IData)(1U) + (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__cnt_o)));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT___GEN_10 = 0U;
-    } else {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT___GEN_7 
-            = (0x3fffU & (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__cnt_o));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT___GEN_10 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__cnt_i;
-    }
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT___GEN_7 
+        = (0x3fffU & (((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__cnt_o) 
+                       != (0x3fffU & (((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[2U] 
+                                        << 0x1dU) | 
+                                       (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[1U] 
+                                        >> 3U)) - (IData)(1U))))
+                       ? ((IData)(1U) + (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__cnt_o))
+                       : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__cnt_o)));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT___GEN_10 
+        = (((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__cnt_o) 
+            != (0x3fffU & (((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[2U] 
+                             << 0x1dU) | (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[1U] 
+                                          >> 3U)) - (IData)(1U))))
+            ? 0U : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__cnt_i));
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__loadUop_io_uop_idx_bits 
         = (0x7ffU & ((0U == (2U ^ (7U & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[0U])))
                       ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__m__DOT__uop_idx)
@@ -7552,11 +7508,12 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                                                     >> 0x1cU))));
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT__xfer_init_addr 
         = ((QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vcr__DOT__reg_7)) 
-           | (0xffffffffULL & ((QData)((IData)(((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[1U] 
-                                                 << 6U) 
-                                                | (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[0U] 
-                                                   >> 0x1aU)))) 
-                               << 6U)));
+           | (VL_ULL(0xffffffff) & ((QData)((IData)(
+                                                    ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[1U] 
+                                                      << 6U) 
+                                                     | (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[0U] 
+                                                        >> 0x1aU)))) 
+                                    << 6U)));
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT__memRow 
         = (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT__rdCmdExtAddrRowBegin 
            + (0x3fffc0U & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[3U] 
@@ -7650,28 +7607,34 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
              & (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore_io_done)) 
             | (1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__state))) 
            & (~ (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__inst_q__DOT__empty)));
-    if (((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__cnt_o) 
-         != (0x3fffU & (((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[2U] 
-                          << 0x1dU) | (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[1U] 
-                                       >> 3U)) - (IData)(1U))))) {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT___GEN_8 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__dst_tmp;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT___GEN_11 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__dst_tmp;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT___GEN_9 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__src_tmp;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT___GEN_12 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__src_tmp;
-    } else {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT___GEN_8 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__dst_o;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT___GEN_11 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__dst_i;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT___GEN_9 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__src_o;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT___GEN_12 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__src_i;
-    }
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT___GEN_8 
+        = (((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__cnt_o) 
+            != (0x3fffU & (((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[2U] 
+                             << 0x1dU) | (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[1U] 
+                                          >> 3U)) - (IData)(1U))))
+            ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__dst_tmp)
+            : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__dst_o));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT___GEN_11 
+        = (((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__cnt_o) 
+            != (0x3fffU & (((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[2U] 
+                             << 0x1dU) | (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[1U] 
+                                          >> 3U)) - (IData)(1U))))
+            ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__dst_tmp)
+            : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__dst_i));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT___GEN_9 
+        = (((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__cnt_o) 
+            != (0x3fffU & (((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[2U] 
+                             << 0x1dU) | (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[1U] 
+                                          >> 3U)) - (IData)(1U))))
+            ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__src_tmp)
+            : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__src_o));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT___GEN_12 
+        = (((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__cnt_o) 
+            != (0x3fffU & (((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[2U] 
+                             << 0x1dU) | (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[1U] 
+                                          >> 3U)) - (IData)(1U))))
+            ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__src_tmp)
+            : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__index_generator__DOT__src_i));
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__loadUop__DOT__loadUop__DOT__tensorLoad__DOT__fillPadding__DOT___GEN_4 
         = (((0U != (0xfU & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[3U] 
                             >> 0x18U))) & (0U == (0xfU 
@@ -7766,58 +7729,11 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                        ? (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__loadUop__DOT__loadUop__DOT__tensorLoad__DOT__vmeCmd__DOT__cmdGen__DOT___rdLineClNb_T_1 
                           >> 3U) : ((IData)(1U) + (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__loadUop__DOT__loadUop__DOT__tensorLoad__DOT__vmeCmd__DOT__cmdGen__DOT___rdLineClNb_T_1 
                                                    >> 3U))));
-    if ((3U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))) {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__alu__DOT___io_y_T_7 
-            = VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__rA, 
-                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__rB));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__alu__DOT___io_y_T_7 
-            = VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__rA, 
-                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__rB));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__alu__DOT___io_y_T_7 
-            = VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__rA, 
-                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__rB));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__alu__DOT___io_y_T_7 
-            = VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__rA, 
-                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__rB));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__alu__DOT___io_y_T_7 
-            = VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__rA, 
-                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__rB));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__alu__DOT___io_y_T_7 
-            = VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__rA, 
-                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__rB));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__alu__DOT___io_y_T_7 
-            = VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__rA, 
-                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__rB));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__alu__DOT___io_y_T_7 
-            = VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__rA, 
-                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__rB));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__alu__DOT___io_y_T_7 
-            = VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__rA, 
-                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__rB));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__alu__DOT___io_y_T_7 
-            = VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__rA, 
-                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__rB));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__alu__DOT___io_y_T_7 
-            = VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__rA, 
-                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__rB));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__alu__DOT___io_y_T_7 
-            = VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__rA, 
-                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__rB));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__alu__DOT___io_y_T_7 
-            = VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__rA, 
-                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__rB));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__alu__DOT___io_y_T_7 
-            = VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__rA, 
-                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__rB));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__alu__DOT___io_y_T_7 
-            = VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__rA, 
-                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__rB));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__alu__DOT___io_y_T_7 
-            = VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__rA, 
-                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__rB));
-    } else {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__alu__DOT___io_y_T_7 
-            = ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__alu__DOT___io_y_T_7 
+        = ((3U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+            ? VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__rA, 
+                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__rB))
+            : ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
                 ? (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__rA 
                    + vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__rB)
                 : ((1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
@@ -7828,9 +7744,12 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                         ? (VL_LTS_III(1,32,32, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__rA, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__rB)
                             ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__rA
                             : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__rB)
-                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__rA)));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__alu__DOT___io_y_T_7 
-            = ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__rA))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__alu__DOT___io_y_T_7 
+        = ((3U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+            ? VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__rA, 
+                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__rB))
+            : ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
                 ? (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__rA 
                    + vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__rB)
                 : ((1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
@@ -7841,9 +7760,12 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                         ? (VL_LTS_III(1,32,32, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__rA, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__rB)
                             ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__rA
                             : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__rB)
-                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__rA)));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__alu__DOT___io_y_T_7 
-            = ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__rA))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__alu__DOT___io_y_T_7 
+        = ((3U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+            ? VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__rA, 
+                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__rB))
+            : ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
                 ? (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__rA 
                    + vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__rB)
                 : ((1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
@@ -7854,9 +7776,12 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                         ? (VL_LTS_III(1,32,32, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__rA, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__rB)
                             ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__rA
                             : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__rB)
-                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__rA)));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__alu__DOT___io_y_T_7 
-            = ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__rA))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__alu__DOT___io_y_T_7 
+        = ((3U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+            ? VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__rA, 
+                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__rB))
+            : ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
                 ? (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__rA 
                    + vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__rB)
                 : ((1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
@@ -7867,9 +7792,12 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                         ? (VL_LTS_III(1,32,32, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__rA, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__rB)
                             ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__rA
                             : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__rB)
-                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__rA)));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__alu__DOT___io_y_T_7 
-            = ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__rA))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__alu__DOT___io_y_T_7 
+        = ((3U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+            ? VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__rA, 
+                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__rB))
+            : ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
                 ? (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__rA 
                    + vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__rB)
                 : ((1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
@@ -7880,9 +7808,12 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                         ? (VL_LTS_III(1,32,32, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__rA, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__rB)
                             ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__rA
                             : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__rB)
-                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__rA)));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__alu__DOT___io_y_T_7 
-            = ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__rA))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__alu__DOT___io_y_T_7 
+        = ((3U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+            ? VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__rA, 
+                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__rB))
+            : ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
                 ? (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__rA 
                    + vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__rB)
                 : ((1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
@@ -7893,9 +7824,12 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                         ? (VL_LTS_III(1,32,32, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__rA, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__rB)
                             ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__rA
                             : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__rB)
-                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__rA)));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__alu__DOT___io_y_T_7 
-            = ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__rA))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__alu__DOT___io_y_T_7 
+        = ((3U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+            ? VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__rA, 
+                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__rB))
+            : ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
                 ? (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__rA 
                    + vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__rB)
                 : ((1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
@@ -7906,9 +7840,12 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                         ? (VL_LTS_III(1,32,32, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__rA, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__rB)
                             ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__rA
                             : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__rB)
-                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__rA)));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__alu__DOT___io_y_T_7 
-            = ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__rA))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__alu__DOT___io_y_T_7 
+        = ((3U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+            ? VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__rA, 
+                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__rB))
+            : ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
                 ? (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__rA 
                    + vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__rB)
                 : ((1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
@@ -7919,9 +7856,12 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                         ? (VL_LTS_III(1,32,32, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__rA, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__rB)
                             ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__rA
                             : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__rB)
-                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__rA)));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__alu__DOT___io_y_T_7 
-            = ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__rA))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__alu__DOT___io_y_T_7 
+        = ((3U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+            ? VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__rA, 
+                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__rB))
+            : ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
                 ? (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__rA 
                    + vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__rB)
                 : ((1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
@@ -7932,9 +7872,12 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                         ? (VL_LTS_III(1,32,32, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__rA, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__rB)
                             ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__rA
                             : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__rB)
-                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__rA)));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__alu__DOT___io_y_T_7 
-            = ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__rA))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__alu__DOT___io_y_T_7 
+        = ((3U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+            ? VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__rA, 
+                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__rB))
+            : ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
                 ? (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__rA 
                    + vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__rB)
                 : ((1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
@@ -7945,9 +7888,12 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                         ? (VL_LTS_III(1,32,32, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__rA, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__rB)
                             ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__rA
                             : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__rB)
-                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__rA)));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__alu__DOT___io_y_T_7 
-            = ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__rA))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__alu__DOT___io_y_T_7 
+        = ((3U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+            ? VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__rA, 
+                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__rB))
+            : ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
                 ? (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__rA 
                    + vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__rB)
                 : ((1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
@@ -7958,9 +7904,12 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                         ? (VL_LTS_III(1,32,32, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__rA, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__rB)
                             ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__rA
                             : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__rB)
-                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__rA)));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__alu__DOT___io_y_T_7 
-            = ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__rA))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__alu__DOT___io_y_T_7 
+        = ((3U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+            ? VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__rA, 
+                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__rB))
+            : ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
                 ? (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__rA 
                    + vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__rB)
                 : ((1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
@@ -7971,9 +7920,12 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                         ? (VL_LTS_III(1,32,32, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__rA, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__rB)
                             ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__rA
                             : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__rB)
-                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__rA)));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__alu__DOT___io_y_T_7 
-            = ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__rA))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__alu__DOT___io_y_T_7 
+        = ((3U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+            ? VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__rA, 
+                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__rB))
+            : ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
                 ? (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__rA 
                    + vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__rB)
                 : ((1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
@@ -7984,9 +7936,12 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                         ? (VL_LTS_III(1,32,32, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__rA, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__rB)
                             ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__rA
                             : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__rB)
-                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__rA)));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__alu__DOT___io_y_T_7 
-            = ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__rA))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__alu__DOT___io_y_T_7 
+        = ((3U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+            ? VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__rA, 
+                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__rB))
+            : ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
                 ? (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__rA 
                    + vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__rB)
                 : ((1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
@@ -7997,9 +7952,12 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                         ? (VL_LTS_III(1,32,32, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__rA, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__rB)
                             ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__rA
                             : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__rB)
-                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__rA)));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__alu__DOT___io_y_T_7 
-            = ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__rA))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__alu__DOT___io_y_T_7 
+        = ((3U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+            ? VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__rA, 
+                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__rB))
+            : ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
                 ? (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__rA 
                    + vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__rB)
                 : ((1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
@@ -8010,9 +7968,12 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                         ? (VL_LTS_III(1,32,32, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__rA, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__rB)
                             ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__rA
                             : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__rB)
-                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__rA)));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__alu__DOT___io_y_T_7 
-            = ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__rA))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__alu__DOT___io_y_T_7 
+        = ((3U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+            ? VL_SHIFTRS_III(32,32,5, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__rA, 
+                             (0x1fU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__rB))
+            : ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
                 ? (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__rA 
                    + vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__rB)
                 : ((1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
@@ -8023,8 +7984,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                         ? (VL_LTS_III(1,32,32, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__rA, vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__rB)
                             ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__rA
                             : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__rB)
-                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__rA)));
-    }
+                        : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__rA))));
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_8 
         = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vme_io_vme_wr_0_data_ready)
             ? (((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xcnt) 
@@ -8165,382 +8125,391 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__loadUop__DOT__loadUop__DOT__tensorLoad__DOT__vmeCmd__DOT__cmdGen__DOT__clRemained 
         = (0x7fffU & ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__loadUop__DOT__loadUop__DOT__tensorLoad__DOT__vmeCmd__DOT__cmdGen__DOT__rdLineClNb) 
                       - (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__loadUop__DOT__loadUop__DOT__tensorLoad__DOT__vmeCmd__DOT__cmdGen__DOT__clReadIdx)));
-    if ((4U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))) {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & ((((QData)((IData)(
-                                                          (0x7fffffffU 
-                                                           & (- (IData)(
-                                                                        (1U 
-                                                                         & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__rA 
-                                                                            >> 0x1fU))))))) 
-                                          << 0x20U) 
-                                         | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__rA))) 
-                                        << (0x1fU & 
-                                            ((IData)(1U) 
-                                             + (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__rB)))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & ((((QData)((IData)(
-                                                          (0x7fffffffU 
-                                                           & (- (IData)(
-                                                                        (1U 
-                                                                         & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__rA 
-                                                                            >> 0x1fU))))))) 
-                                          << 0x20U) 
-                                         | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__rA))) 
-                                        << (0x1fU & 
-                                            ((IData)(1U) 
-                                             + (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__rB)))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & ((((QData)((IData)(
-                                                          (0x7fffffffU 
-                                                           & (- (IData)(
-                                                                        (1U 
-                                                                         & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__rA 
-                                                                            >> 0x1fU))))))) 
-                                          << 0x20U) 
-                                         | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__rA))) 
-                                        << (0x1fU & 
-                                            ((IData)(1U) 
-                                             + (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__rB)))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & ((((QData)((IData)(
-                                                          (0x7fffffffU 
-                                                           & (- (IData)(
-                                                                        (1U 
-                                                                         & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__rA 
-                                                                            >> 0x1fU))))))) 
-                                          << 0x20U) 
-                                         | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__rA))) 
-                                        << (0x1fU & 
-                                            ((IData)(1U) 
-                                             + (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__rB)))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & ((((QData)((IData)(
-                                                          (0x7fffffffU 
-                                                           & (- (IData)(
-                                                                        (1U 
-                                                                         & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__rA 
-                                                                            >> 0x1fU))))))) 
-                                          << 0x20U) 
-                                         | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__rA))) 
-                                        << (0x1fU & 
-                                            ((IData)(1U) 
-                                             + (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__rB)))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & ((((QData)((IData)(
-                                                          (0x7fffffffU 
-                                                           & (- (IData)(
-                                                                        (1U 
-                                                                         & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__rA 
-                                                                            >> 0x1fU))))))) 
-                                          << 0x20U) 
-                                         | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__rA))) 
-                                        << (0x1fU & 
-                                            ((IData)(1U) 
-                                             + (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__rB)))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & ((((QData)((IData)(
-                                                          (0x7fffffffU 
-                                                           & (- (IData)(
-                                                                        (1U 
-                                                                         & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__rA 
-                                                                            >> 0x1fU))))))) 
-                                          << 0x20U) 
-                                         | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__rA))) 
-                                        << (0x1fU & 
-                                            ((IData)(1U) 
-                                             + (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__rB)))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & ((((QData)((IData)(
-                                                          (0x7fffffffU 
-                                                           & (- (IData)(
-                                                                        (1U 
-                                                                         & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__rA 
-                                                                            >> 0x1fU))))))) 
-                                          << 0x20U) 
-                                         | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__rA))) 
-                                        << (0x1fU & 
-                                            ((IData)(1U) 
-                                             + (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__rB)))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & ((((QData)((IData)(
-                                                          (0x7fffffffU 
-                                                           & (- (IData)(
-                                                                        (1U 
-                                                                         & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__rA 
-                                                                            >> 0x1fU))))))) 
-                                          << 0x20U) 
-                                         | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__rA))) 
-                                        << (0x1fU & 
-                                            ((IData)(1U) 
-                                             + (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__rB)))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & ((((QData)((IData)(
-                                                          (0x7fffffffU 
-                                                           & (- (IData)(
-                                                                        (1U 
-                                                                         & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__rA 
-                                                                            >> 0x1fU))))))) 
-                                          << 0x20U) 
-                                         | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__rA))) 
-                                        << (0x1fU & 
-                                            ((IData)(1U) 
-                                             + (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__rB)))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & ((((QData)((IData)(
-                                                          (0x7fffffffU 
-                                                           & (- (IData)(
-                                                                        (1U 
-                                                                         & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__rA 
-                                                                            >> 0x1fU))))))) 
-                                          << 0x20U) 
-                                         | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__rA))) 
-                                        << (0x1fU & 
-                                            ((IData)(1U) 
-                                             + (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__rB)))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & ((((QData)((IData)(
-                                                          (0x7fffffffU 
-                                                           & (- (IData)(
-                                                                        (1U 
-                                                                         & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__rA 
-                                                                            >> 0x1fU))))))) 
-                                          << 0x20U) 
-                                         | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__rA))) 
-                                        << (0x1fU & 
-                                            ((IData)(1U) 
-                                             + (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__rB)))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & ((((QData)((IData)(
-                                                          (0x7fffffffU 
-                                                           & (- (IData)(
-                                                                        (1U 
-                                                                         & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__rA 
-                                                                            >> 0x1fU))))))) 
-                                          << 0x20U) 
-                                         | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__rA))) 
-                                        << (0x1fU & 
-                                            ((IData)(1U) 
-                                             + (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__rB)))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & ((((QData)((IData)(
-                                                          (0x7fffffffU 
-                                                           & (- (IData)(
-                                                                        (1U 
-                                                                         & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__rA 
-                                                                            >> 0x1fU))))))) 
-                                          << 0x20U) 
-                                         | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__rA))) 
-                                        << (0x1fU & 
-                                            ((IData)(1U) 
-                                             + (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__rB)))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & ((((QData)((IData)(
-                                                          (0x7fffffffU 
-                                                           & (- (IData)(
-                                                                        (1U 
-                                                                         & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__rA 
-                                                                            >> 0x1fU))))))) 
-                                          << 0x20U) 
-                                         | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__rA))) 
-                                        << (0x1fU & 
-                                            ((IData)(1U) 
-                                             + (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__rB)))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & ((((QData)((IData)(
-                                                          (0x7fffffffU 
-                                                           & (- (IData)(
-                                                                        (1U 
-                                                                         & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__rA 
-                                                                            >> 0x1fU))))))) 
-                                          << 0x20U) 
-                                         | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__rA))) 
-                                        << (0x1fU & 
-                                            ((IData)(1U) 
-                                             + (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__rB)))));
-    } else {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & (((QData)((IData)(
-                                                         (0x7fffffffU 
-                                                          & (- (IData)(
-                                                                       (1U 
-                                                                        & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__alu__DOT___io_y_T_7 
-                                                                           >> 0x1fU))))))) 
-                                         << 0x20U) 
-                                        | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__alu__DOT___io_y_T_7))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & (((QData)((IData)(
-                                                         (0x7fffffffU 
-                                                          & (- (IData)(
-                                                                       (1U 
-                                                                        & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__alu__DOT___io_y_T_7 
-                                                                           >> 0x1fU))))))) 
-                                         << 0x20U) 
-                                        | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__alu__DOT___io_y_T_7))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & (((QData)((IData)(
-                                                         (0x7fffffffU 
-                                                          & (- (IData)(
-                                                                       (1U 
-                                                                        & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__alu__DOT___io_y_T_7 
-                                                                           >> 0x1fU))))))) 
-                                         << 0x20U) 
-                                        | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__alu__DOT___io_y_T_7))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & (((QData)((IData)(
-                                                         (0x7fffffffU 
-                                                          & (- (IData)(
-                                                                       (1U 
-                                                                        & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__alu__DOT___io_y_T_7 
-                                                                           >> 0x1fU))))))) 
-                                         << 0x20U) 
-                                        | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__alu__DOT___io_y_T_7))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & (((QData)((IData)(
-                                                         (0x7fffffffU 
-                                                          & (- (IData)(
-                                                                       (1U 
-                                                                        & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__alu__DOT___io_y_T_7 
-                                                                           >> 0x1fU))))))) 
-                                         << 0x20U) 
-                                        | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__alu__DOT___io_y_T_7))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & (((QData)((IData)(
-                                                         (0x7fffffffU 
-                                                          & (- (IData)(
-                                                                       (1U 
-                                                                        & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__alu__DOT___io_y_T_7 
-                                                                           >> 0x1fU))))))) 
-                                         << 0x20U) 
-                                        | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__alu__DOT___io_y_T_7))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & (((QData)((IData)(
-                                                         (0x7fffffffU 
-                                                          & (- (IData)(
-                                                                       (1U 
-                                                                        & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__alu__DOT___io_y_T_7 
-                                                                           >> 0x1fU))))))) 
-                                         << 0x20U) 
-                                        | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__alu__DOT___io_y_T_7))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & (((QData)((IData)(
-                                                         (0x7fffffffU 
-                                                          & (- (IData)(
-                                                                       (1U 
-                                                                        & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__alu__DOT___io_y_T_7 
-                                                                           >> 0x1fU))))))) 
-                                         << 0x20U) 
-                                        | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__alu__DOT___io_y_T_7))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & (((QData)((IData)(
-                                                         (0x7fffffffU 
-                                                          & (- (IData)(
-                                                                       (1U 
-                                                                        & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__alu__DOT___io_y_T_7 
-                                                                           >> 0x1fU))))))) 
-                                         << 0x20U) 
-                                        | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__alu__DOT___io_y_T_7))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & (((QData)((IData)(
-                                                         (0x7fffffffU 
-                                                          & (- (IData)(
-                                                                       (1U 
-                                                                        & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__alu__DOT___io_y_T_7 
-                                                                           >> 0x1fU))))))) 
-                                         << 0x20U) 
-                                        | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__alu__DOT___io_y_T_7))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & (((QData)((IData)(
-                                                         (0x7fffffffU 
-                                                          & (- (IData)(
-                                                                       (1U 
-                                                                        & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__alu__DOT___io_y_T_7 
-                                                                           >> 0x1fU))))))) 
-                                         << 0x20U) 
-                                        | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__alu__DOT___io_y_T_7))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & (((QData)((IData)(
-                                                         (0x7fffffffU 
-                                                          & (- (IData)(
-                                                                       (1U 
-                                                                        & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__alu__DOT___io_y_T_7 
-                                                                           >> 0x1fU))))))) 
-                                         << 0x20U) 
-                                        | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__alu__DOT___io_y_T_7))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & (((QData)((IData)(
-                                                         (0x7fffffffU 
-                                                          & (- (IData)(
-                                                                       (1U 
-                                                                        & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__alu__DOT___io_y_T_7 
-                                                                           >> 0x1fU))))))) 
-                                         << 0x20U) 
-                                        | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__alu__DOT___io_y_T_7))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & (((QData)((IData)(
-                                                         (0x7fffffffU 
-                                                          & (- (IData)(
-                                                                       (1U 
-                                                                        & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__alu__DOT___io_y_T_7 
-                                                                           >> 0x1fU))))))) 
-                                         << 0x20U) 
-                                        | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__alu__DOT___io_y_T_7))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & (((QData)((IData)(
-                                                         (0x7fffffffU 
-                                                          & (- (IData)(
-                                                                       (1U 
-                                                                        & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__alu__DOT___io_y_T_7 
-                                                                           >> 0x1fU))))))) 
-                                         << 0x20U) 
-                                        | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__alu__DOT___io_y_T_7))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__alu__DOT___io_y_T_9 
-            = (0x7fffffffffffffffULL & (((QData)((IData)(
-                                                         (0x7fffffffU 
-                                                          & (- (IData)(
-                                                                       (1U 
-                                                                        & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__alu__DOT___io_y_T_7 
-                                                                           >> 0x1fU))))))) 
-                                         << 0x20U) 
-                                        | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__alu__DOT___io_y_T_7))));
-    }
-    if ((0U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__state))) {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_79 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xfer_init_addr;
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_68 
-            = (0xffffU & ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__inst_q__DOT__ram_io_deq_bits_MPORT_data[1U] 
-                           << 0x16U) | (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__inst_q__DOT__ram_io_deq_bits_MPORT_data[0U] 
-                                        >> 0xaU)));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_69 
-            = (0xffffU & ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__inst_q__DOT__ram_io_deq_bits_MPORT_data[1U] 
-                           << 0x16U) | (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__inst_q__DOT__ram_io_deq_bits_MPORT_data[0U] 
-                                        >> 0xaU)));
-    } else {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_79 
-            = (QData)((IData)((((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___stride_T_1) 
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__alu__DOT___io_y_T_9 
+        = (VL_ULL(0x7fffffffffffffff) & ((4U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                                          ? ((((QData)((IData)(
+                                                               (0x7fffffffU 
+                                                                & (- (IData)(
+                                                                             (1U 
+                                                                              & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__rA 
+                                                                                >> 0x1fU))))))) 
+                                               << 0x20U) 
+                                              | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__rA))) 
+                                             << (0x1fU 
+                                                 & ((IData)(1U) 
+                                                    + 
+                                                    (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__rB))))
+                                          : (((QData)((IData)(
+                                                              (0x7fffffffU 
+                                                               & (- (IData)(
+                                                                            (1U 
+                                                                             & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__alu__DOT___io_y_T_7 
+                                                                                >> 0x1fU))))))) 
+                                              << 0x20U) 
+                                             | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_0__DOT__alu__DOT___io_y_T_7)))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__alu__DOT___io_y_T_9 
+        = (VL_ULL(0x7fffffffffffffff) & ((4U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                                          ? ((((QData)((IData)(
+                                                               (0x7fffffffU 
+                                                                & (- (IData)(
+                                                                             (1U 
+                                                                              & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__rA 
+                                                                                >> 0x1fU))))))) 
+                                               << 0x20U) 
+                                              | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__rA))) 
+                                             << (0x1fU 
+                                                 & ((IData)(1U) 
+                                                    + 
+                                                    (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__rB))))
+                                          : (((QData)((IData)(
+                                                              (0x7fffffffU 
+                                                               & (- (IData)(
+                                                                            (1U 
+                                                                             & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__alu__DOT___io_y_T_7 
+                                                                                >> 0x1fU))))))) 
+                                              << 0x20U) 
+                                             | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_1__DOT__alu__DOT___io_y_T_7)))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__alu__DOT___io_y_T_9 
+        = (VL_ULL(0x7fffffffffffffff) & ((4U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                                          ? ((((QData)((IData)(
+                                                               (0x7fffffffU 
+                                                                & (- (IData)(
+                                                                             (1U 
+                                                                              & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__rA 
+                                                                                >> 0x1fU))))))) 
+                                               << 0x20U) 
+                                              | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__rA))) 
+                                             << (0x1fU 
+                                                 & ((IData)(1U) 
+                                                    + 
+                                                    (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__rB))))
+                                          : (((QData)((IData)(
+                                                              (0x7fffffffU 
+                                                               & (- (IData)(
+                                                                            (1U 
+                                                                             & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__alu__DOT___io_y_T_7 
+                                                                                >> 0x1fU))))))) 
+                                              << 0x20U) 
+                                             | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_2__DOT__alu__DOT___io_y_T_7)))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__alu__DOT___io_y_T_9 
+        = (VL_ULL(0x7fffffffffffffff) & ((4U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                                          ? ((((QData)((IData)(
+                                                               (0x7fffffffU 
+                                                                & (- (IData)(
+                                                                             (1U 
+                                                                              & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__rA 
+                                                                                >> 0x1fU))))))) 
+                                               << 0x20U) 
+                                              | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__rA))) 
+                                             << (0x1fU 
+                                                 & ((IData)(1U) 
+                                                    + 
+                                                    (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__rB))))
+                                          : (((QData)((IData)(
+                                                              (0x7fffffffU 
+                                                               & (- (IData)(
+                                                                            (1U 
+                                                                             & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__alu__DOT___io_y_T_7 
+                                                                                >> 0x1fU))))))) 
+                                              << 0x20U) 
+                                             | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_3__DOT__alu__DOT___io_y_T_7)))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__alu__DOT___io_y_T_9 
+        = (VL_ULL(0x7fffffffffffffff) & ((4U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                                          ? ((((QData)((IData)(
+                                                               (0x7fffffffU 
+                                                                & (- (IData)(
+                                                                             (1U 
+                                                                              & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__rA 
+                                                                                >> 0x1fU))))))) 
+                                               << 0x20U) 
+                                              | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__rA))) 
+                                             << (0x1fU 
+                                                 & ((IData)(1U) 
+                                                    + 
+                                                    (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__rB))))
+                                          : (((QData)((IData)(
+                                                              (0x7fffffffU 
+                                                               & (- (IData)(
+                                                                            (1U 
+                                                                             & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__alu__DOT___io_y_T_7 
+                                                                                >> 0x1fU))))))) 
+                                              << 0x20U) 
+                                             | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_4__DOT__alu__DOT___io_y_T_7)))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__alu__DOT___io_y_T_9 
+        = (VL_ULL(0x7fffffffffffffff) & ((4U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                                          ? ((((QData)((IData)(
+                                                               (0x7fffffffU 
+                                                                & (- (IData)(
+                                                                             (1U 
+                                                                              & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__rA 
+                                                                                >> 0x1fU))))))) 
+                                               << 0x20U) 
+                                              | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__rA))) 
+                                             << (0x1fU 
+                                                 & ((IData)(1U) 
+                                                    + 
+                                                    (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__rB))))
+                                          : (((QData)((IData)(
+                                                              (0x7fffffffU 
+                                                               & (- (IData)(
+                                                                            (1U 
+                                                                             & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__alu__DOT___io_y_T_7 
+                                                                                >> 0x1fU))))))) 
+                                              << 0x20U) 
+                                             | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_5__DOT__alu__DOT___io_y_T_7)))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__alu__DOT___io_y_T_9 
+        = (VL_ULL(0x7fffffffffffffff) & ((4U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                                          ? ((((QData)((IData)(
+                                                               (0x7fffffffU 
+                                                                & (- (IData)(
+                                                                             (1U 
+                                                                              & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__rA 
+                                                                                >> 0x1fU))))))) 
+                                               << 0x20U) 
+                                              | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__rA))) 
+                                             << (0x1fU 
+                                                 & ((IData)(1U) 
+                                                    + 
+                                                    (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__rB))))
+                                          : (((QData)((IData)(
+                                                              (0x7fffffffU 
+                                                               & (- (IData)(
+                                                                            (1U 
+                                                                             & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__alu__DOT___io_y_T_7 
+                                                                                >> 0x1fU))))))) 
+                                              << 0x20U) 
+                                             | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_6__DOT__alu__DOT___io_y_T_7)))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__alu__DOT___io_y_T_9 
+        = (VL_ULL(0x7fffffffffffffff) & ((4U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                                          ? ((((QData)((IData)(
+                                                               (0x7fffffffU 
+                                                                & (- (IData)(
+                                                                             (1U 
+                                                                              & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__rA 
+                                                                                >> 0x1fU))))))) 
+                                               << 0x20U) 
+                                              | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__rA))) 
+                                             << (0x1fU 
+                                                 & ((IData)(1U) 
+                                                    + 
+                                                    (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__rB))))
+                                          : (((QData)((IData)(
+                                                              (0x7fffffffU 
+                                                               & (- (IData)(
+                                                                            (1U 
+                                                                             & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__alu__DOT___io_y_T_7 
+                                                                                >> 0x1fU))))))) 
+                                              << 0x20U) 
+                                             | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_7__DOT__alu__DOT___io_y_T_7)))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__alu__DOT___io_y_T_9 
+        = (VL_ULL(0x7fffffffffffffff) & ((4U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                                          ? ((((QData)((IData)(
+                                                               (0x7fffffffU 
+                                                                & (- (IData)(
+                                                                             (1U 
+                                                                              & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__rA 
+                                                                                >> 0x1fU))))))) 
+                                               << 0x20U) 
+                                              | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__rA))) 
+                                             << (0x1fU 
+                                                 & ((IData)(1U) 
+                                                    + 
+                                                    (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__rB))))
+                                          : (((QData)((IData)(
+                                                              (0x7fffffffU 
+                                                               & (- (IData)(
+                                                                            (1U 
+                                                                             & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__alu__DOT___io_y_T_7 
+                                                                                >> 0x1fU))))))) 
+                                              << 0x20U) 
+                                             | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_8__DOT__alu__DOT___io_y_T_7)))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__alu__DOT___io_y_T_9 
+        = (VL_ULL(0x7fffffffffffffff) & ((4U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                                          ? ((((QData)((IData)(
+                                                               (0x7fffffffU 
+                                                                & (- (IData)(
+                                                                             (1U 
+                                                                              & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__rA 
+                                                                                >> 0x1fU))))))) 
+                                               << 0x20U) 
+                                              | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__rA))) 
+                                             << (0x1fU 
+                                                 & ((IData)(1U) 
+                                                    + 
+                                                    (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__rB))))
+                                          : (((QData)((IData)(
+                                                              (0x7fffffffU 
+                                                               & (- (IData)(
+                                                                            (1U 
+                                                                             & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__alu__DOT___io_y_T_7 
+                                                                                >> 0x1fU))))))) 
+                                              << 0x20U) 
+                                             | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_9__DOT__alu__DOT___io_y_T_7)))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__alu__DOT___io_y_T_9 
+        = (VL_ULL(0x7fffffffffffffff) & ((4U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                                          ? ((((QData)((IData)(
+                                                               (0x7fffffffU 
+                                                                & (- (IData)(
+                                                                             (1U 
+                                                                              & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__rA 
+                                                                                >> 0x1fU))))))) 
+                                               << 0x20U) 
+                                              | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__rA))) 
+                                             << (0x1fU 
+                                                 & ((IData)(1U) 
+                                                    + 
+                                                    (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__rB))))
+                                          : (((QData)((IData)(
+                                                              (0x7fffffffU 
+                                                               & (- (IData)(
+                                                                            (1U 
+                                                                             & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__alu__DOT___io_y_T_7 
+                                                                                >> 0x1fU))))))) 
+                                              << 0x20U) 
+                                             | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_10__DOT__alu__DOT___io_y_T_7)))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__alu__DOT___io_y_T_9 
+        = (VL_ULL(0x7fffffffffffffff) & ((4U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                                          ? ((((QData)((IData)(
+                                                               (0x7fffffffU 
+                                                                & (- (IData)(
+                                                                             (1U 
+                                                                              & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__rA 
+                                                                                >> 0x1fU))))))) 
+                                               << 0x20U) 
+                                              | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__rA))) 
+                                             << (0x1fU 
+                                                 & ((IData)(1U) 
+                                                    + 
+                                                    (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__rB))))
+                                          : (((QData)((IData)(
+                                                              (0x7fffffffU 
+                                                               & (- (IData)(
+                                                                            (1U 
+                                                                             & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__alu__DOT___io_y_T_7 
+                                                                                >> 0x1fU))))))) 
+                                              << 0x20U) 
+                                             | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_11__DOT__alu__DOT___io_y_T_7)))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__alu__DOT___io_y_T_9 
+        = (VL_ULL(0x7fffffffffffffff) & ((4U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                                          ? ((((QData)((IData)(
+                                                               (0x7fffffffU 
+                                                                & (- (IData)(
+                                                                             (1U 
+                                                                              & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__rA 
+                                                                                >> 0x1fU))))))) 
+                                               << 0x20U) 
+                                              | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__rA))) 
+                                             << (0x1fU 
+                                                 & ((IData)(1U) 
+                                                    + 
+                                                    (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__rB))))
+                                          : (((QData)((IData)(
+                                                              (0x7fffffffU 
+                                                               & (- (IData)(
+                                                                            (1U 
+                                                                             & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__alu__DOT___io_y_T_7 
+                                                                                >> 0x1fU))))))) 
+                                              << 0x20U) 
+                                             | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_12__DOT__alu__DOT___io_y_T_7)))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__alu__DOT___io_y_T_9 
+        = (VL_ULL(0x7fffffffffffffff) & ((4U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                                          ? ((((QData)((IData)(
+                                                               (0x7fffffffU 
+                                                                & (- (IData)(
+                                                                             (1U 
+                                                                              & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__rA 
+                                                                                >> 0x1fU))))))) 
+                                               << 0x20U) 
+                                              | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__rA))) 
+                                             << (0x1fU 
+                                                 & ((IData)(1U) 
+                                                    + 
+                                                    (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__rB))))
+                                          : (((QData)((IData)(
+                                                              (0x7fffffffU 
+                                                               & (- (IData)(
+                                                                            (1U 
+                                                                             & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__alu__DOT___io_y_T_7 
+                                                                                >> 0x1fU))))))) 
+                                              << 0x20U) 
+                                             | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_13__DOT__alu__DOT___io_y_T_7)))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__alu__DOT___io_y_T_9 
+        = (VL_ULL(0x7fffffffffffffff) & ((4U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                                          ? ((((QData)((IData)(
+                                                               (0x7fffffffU 
+                                                                & (- (IData)(
+                                                                             (1U 
+                                                                              & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__rA 
+                                                                                >> 0x1fU))))))) 
+                                               << 0x20U) 
+                                              | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__rA))) 
+                                             << (0x1fU 
+                                                 & ((IData)(1U) 
+                                                    + 
+                                                    (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__rB))))
+                                          : (((QData)((IData)(
+                                                              (0x7fffffffU 
+                                                               & (- (IData)(
+                                                                            (1U 
+                                                                             & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__alu__DOT___io_y_T_7 
+                                                                                >> 0x1fU))))))) 
+                                              << 0x20U) 
+                                             | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_14__DOT__alu__DOT___io_y_T_7)))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__alu__DOT___io_y_T_9 
+        = (VL_ULL(0x7fffffffffffffff) & ((4U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu_io_opcode))
+                                          ? ((((QData)((IData)(
+                                                               (0x7fffffffU 
+                                                                & (- (IData)(
+                                                                             (1U 
+                                                                              & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__rA 
+                                                                                >> 0x1fU))))))) 
+                                               << 0x20U) 
+                                              | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__rA))) 
+                                             << (0x1fU 
+                                                 & ((IData)(1U) 
+                                                    + 
+                                                    (~ vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__rB))))
+                                          : (((QData)((IData)(
+                                                              (0x7fffffffU 
+                                                               & (- (IData)(
+                                                                            (1U 
+                                                                             & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__alu__DOT___io_y_T_7 
+                                                                                >> 0x1fU))))))) 
+                                              << 0x20U) 
+                                             | (QData)((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAlu__DOT__alu__DOT__f_15__DOT__alu__DOT___io_y_T_7)))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_79 
+        = ((0U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__state))
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xfer_init_addr
+            : (QData)((IData)((((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___stride_T_1) 
                                 & (0U != (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xrem)))
                                 ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__waddr_nxt
                                 : ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__stride)
                                     ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xfer_stride_addr
-                                    : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__waddr_nxt))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_68 
-            = (0xffffU & ((((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___T_42) 
-                            & (0U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__set))) 
-                           & (1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__tag)))
-                           ? (0x7ffU & ((IData)(1U) 
-                                        + (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__raddr_cur)))
-                           : ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__stride)
-                               ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___raddr_cur_T_3)
-                               : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__raddr_cur))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_69 
-            = (0xffffU & ((((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___T_42) 
-                            & (0U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__set))) 
-                           & (1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__tag)))
-                           ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__raddr_nxt)
-                           : ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__stride)
-                               ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___raddr_cur_T_3)
-                               : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__raddr_nxt))));
-    }
+                                    : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__waddr_nxt)))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_68 
+        = (0xffffU & ((0U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__state))
+                       ? ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__inst_q__DOT__ram_io_deq_bits_MPORT_data[1U] 
+                           << 0x16U) | (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__inst_q__DOT__ram_io_deq_bits_MPORT_data[0U] 
+                                        >> 0xaU)) : 
+                      ((((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___T_42) 
+                         & (0U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__set))) 
+                        & (1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__tag)))
+                        ? (0x7ffU & ((IData)(1U) + (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__raddr_cur)))
+                        : ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__stride)
+                            ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___raddr_cur_T_3)
+                            : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__raddr_cur)))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_69 
+        = (0xffffU & ((0U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__state))
+                       ? ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__inst_q__DOT__ram_io_deq_bits_MPORT_data[1U] 
+                           << 0x16U) | (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__inst_q__DOT__ram_io_deq_bits_MPORT_data[0U] 
+                                        >> 0xaU)) : 
+                      ((((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___T_42) 
+                         & (0U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__set))) 
+                        & (1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__tag)))
+                        ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__raddr_nxt)
+                        : ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__stride)
+                            ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___raddr_cur_T_3)
+                            : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__raddr_nxt)))));
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_28 
         = ((4U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__state))
             ? ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vme_io_vme_wr_0_ack)
@@ -8564,14 +8533,10 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                                 : ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__stride)
                                     ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xfer_stride_addr
                                     : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__waddr_cur)))));
-    if ((3U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__state))) {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_34 
-            = (0x1ffffU & (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xrem));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_33 
-            = (0x1ffffU & (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xlen));
-    } else {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_34 
-            = (0x1ffffU & ((4U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__state))
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_34 
+        = (0x1ffffU & ((3U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__state))
+                        ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xrem)
+                        : ((4U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__state))
                             ? ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vme_io_vme_wr_0_ack)
                                 ? ((0U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xrem))
                                     ? (((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__ycnt) 
@@ -8620,9 +8585,11 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                                                          & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xfer_split_addr)) 
                                                        >> 3U))))))
                                 : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xrem))
-                            : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xrem)));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_33 
-            = (0x1ffffU & ((4U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__state))
+                            : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xrem))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_33 
+        = (0x1ffffU & ((3U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__state))
+                        ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xlen)
+                        : ((4U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__state))
                             ? ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__vme_io_vme_wr_0_ack)
                                 ? ((0U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xrem))
                                     ? (((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__ycnt) 
@@ -8678,8 +8645,7 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                                                           >> 3U)) 
                                                       - (IData)(1U))))))
                                 : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xlen))
-                            : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xlen)));
-    }
+                            : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xlen))));
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__m__DOT___GEN_1 
         = (((~ (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__m__DOT__running)) 
             & (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm_io_start_REG)) 
@@ -8780,9 +8746,9 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                              >> 3U))) : ((0x100U > (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__loadUop__DOT__loadUop__DOT__tensorLoad__DOT__vmeCmd__DOT__cmdGen__DOT__clRemained))
                                           ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__loadUop__DOT__loadUop__DOT__tensorLoad__DOT__vmeCmd__DOT__cmdGen__DOT__clRemained)
                                           : 0x100U));
-    if ((0U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__state))) {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_46 
-            = (0x1ffffU & ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore_io_start)
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_46 
+        = (0x1ffffU & ((0U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__state))
+                        ? ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore_io_start)
                             ? (((0x1fffeU & ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__inst_q__DOT__ram_io_deq_bits_MPORT_data[3U] 
                                               << 0x11U) 
                                              | (0x1fffeU 
@@ -8803,9 +8769,15 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                                              - (0x7ffU 
                                                 & (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xfer_init_addr))) 
                                             >> 3U))))
-                            : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xrem)));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_45 
-            = (0x1ffffU & ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore_io_start)
+                            : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xrem))
+                        : ((1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__state))
+                            ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xrem)
+                            : ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__state))
+                                ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xrem)
+                                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_34))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_45 
+        = (0x1ffffU & ((0U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__state))
+                        ? ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore_io_start)
                             ? (((0x1fffeU & ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__inst_q__DOT__ram_io_deq_bits_MPORT_data[3U] 
                                               << 0x11U) 
                                              | (0x1fffeU 
@@ -8827,21 +8799,12 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
                                                 & (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xfer_init_addr))) 
                                             >> 3U)) 
                                           - (IData)(1U))))
-                            : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xlen)));
-    } else {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_46 
-            = (0x1ffffU & ((1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__state))
-                            ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xrem)
-                            : ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__state))
-                                ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xrem)
-                                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_34)));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_45 
-            = (0x1ffffU & ((1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__state))
+                            : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xlen))
+                        : ((1U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__state))
                             ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xlen)
                             : ((2U == (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__state))
                                 ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT__xlen)
-                                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_33)));
-    }
+                                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__store__DOT__tensorStore__DOT__tensorStore__DOT___GEN_33))));
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT___GEN_3 
         = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__done)
             ? 0U : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__state));
@@ -8889,38 +8852,35 @@ VL_INLINE_OPT void VTest::_sequent__TOP__3(VTest__Syms* __restrict vlSymsp) {
         = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT___T_14)
             ? (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT__stride)
             : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT__newReadRow));
-    if (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc_io_start) {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT___GEN_14 
-            = (0xffffU & (((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[1U] 
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT___GEN_14 
+        = (0xffffU & ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc_io_start)
+                       ? (((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[1U] 
                             << 0x16U) | (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[0U] 
                                          >> 0xaU)) 
                           + (0xfU & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[3U] 
-                                     >> 0x18U))));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT___GEN_23 
-            = vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT__xfer_init_addr;
-    } else {
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT___GEN_14 
-            = (0xffffU & (((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__state) 
-                           & ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT__currentRowIdx 
-                               < (0xfU & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[3U] 
-                                          >> 0x10U))) 
-                              | (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT__stride)))
-                           ? ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT__rdCmdStartIdx) 
-                              + ((((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[3U] 
-                                    << 0x10U) | (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[2U] 
-                                                 >> 0x10U)) 
-                                  + (0xfU & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[3U] 
-                                             >> 0x18U))) 
-                                 + (0xfU & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[3U] 
-                                            >> 0x1cU))))
-                           : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT__rdCmdStartIdx)));
-        vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT___GEN_23 
-            = (QData)((IData)(((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT___T_14)
+                                     >> 0x18U))) : 
+                      (((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__state) 
+                        & ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT__currentRowIdx 
+                            < (0xfU & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[3U] 
+                                       >> 0x10U))) 
+                           | (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT__stride)))
+                        ? ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT__rdCmdStartIdx) 
+                           + ((((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[3U] 
+                                 << 0x10U) | (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[2U] 
+                                              >> 0x10U)) 
+                               + (0xfU & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[3U] 
+                                          >> 0x18U))) 
+                              + (0xfU & (vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__inst_q__DOT__queue__DOT__queue__DOT__buffer__DOT__ram_io_deq_bits_MPORT_data[3U] 
+                                         >> 0x1cU))))
+                        : (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT__rdCmdStartIdx))));
+    vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT___GEN_23 
+        = ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc_io_start)
+            ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT__xfer_init_addr
+            : (QData)((IData)(((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT___T_14)
                                 ? ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT__stride)
                                     ? vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT__memRow
                                     : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT__rdCmdExtAddrRowBegin)
-                                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT__rdCmdExtAddrRowBegin)));
-    }
+                                : vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT__rdCmdExtAddrRowBegin))));
     vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT___GEN_6 
         = ((~ ((IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc_io_start) 
                | (IData)(vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorAcc__DOT__tensorLoad__DOT__vmeCmd__DOT__stride))) 

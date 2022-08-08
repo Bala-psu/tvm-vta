@@ -25,10 +25,10 @@ ifeq (, $(VERILATOR_INC_DIR))
 		ifeq (, $(wildcard /usr/share/verilator/include/*))
 			$(error "Verilator include directory is not set properly")
 		else
-			VERILATOR_INC_DIR := /home/balas/anaconda3/share/verilator/include
+			VERILATOR_INC_DIR := /usr/share/verilator/include
 		endif
 	else
-			VERILATOR_INC_DIR := /home/balas/anaconda3/share/verilator/include
+			VERILATOR_INC_DIR := /usr/local/share/verilator/include
 	endif
 endif
 

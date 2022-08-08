@@ -5,8 +5,8 @@
 # See VTest.mk for the caller.
 
 ### Switches...
-# C11 constructs required?  0/1 (always on now)
-VM_C11 = 1
+# C11 constructs required?  0/1 (from --threads, --trace-threads or use of classes)
+VM_C11 = 0
 # Coverage output mode?  0/1 (from --coverage)
 VM_COVERAGE = 0
 # Parallel builds?  0/1 (from --output-split)
@@ -15,8 +15,6 @@ VM_PARALLEL_BUILDS = 1
 VM_THREADS = 0
 # Tracing output mode?  0/1 (from --trace/--trace-fst)
 VM_TRACE = 0
-# Tracing output mode in FST format?  0/1 (from --trace-fst)
-VM_TRACE_FST = 0
 # Tracing threaded output mode?  0/1/N threads (from --trace-thread)
 VM_TRACE_THREADS = 0
 # Separate FST writer thread? 0/1 (from --trace-fst with --trace-thread > 0)
@@ -32,6 +30,7 @@ VM_CLASSES_FAST += \
 # Generated module classes, non-fast-path, compile with low/medium optimization
 VM_CLASSES_SLOW += \
 	VTest__Slow \
+	VTest__1__Slow \
 	VTest_DotProduct__Slow \
 
 # Generated support classes, fast-path, compile with highest optimization

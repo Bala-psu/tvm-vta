@@ -11,7 +11,7 @@
 
 VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_0__17(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+                  VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_0__17\n"); );
-    VTest* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     this->__PVT__m_0__DOT__rA = (0xffU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[0U]);
     this->__PVT__m_1__DOT__rA = (0xffU & ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[1U] 
@@ -299,7 +299,7 @@ VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__c
 
 VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_1__18(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+                  VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_1__18\n"); );
-    VTest* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     this->__PVT__m_0__DOT__rA = (0xffU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[0U]);
     this->__PVT__m_1__DOT__rA = (0xffU & ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[1U] 
@@ -587,7 +587,7 @@ VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__c
 
 VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_2__19(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+                  VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_2__19\n"); );
-    VTest* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     this->__PVT__m_0__DOT__rA = (0xffU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[0U]);
     this->__PVT__m_1__DOT__rA = (0xffU & ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[1U] 
@@ -875,7 +875,7 @@ VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__c
 
 VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_3__20(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+                  VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_3__20\n"); );
-    VTest* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     this->__PVT__m_0__DOT__rA = (0xffU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[0U]);
     this->__PVT__m_1__DOT__rA = (0xffU & ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[1U] 
@@ -1163,7 +1163,7 @@ VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__c
 
 VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_4__21(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+                  VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_4__21\n"); );
-    VTest* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     this->__PVT__m_0__DOT__rA = (0xffU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[0U]);
     this->__PVT__m_1__DOT__rA = (0xffU & ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[1U] 
@@ -1451,7 +1451,7 @@ VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__c
 
 VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_5__22(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+                  VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_5__22\n"); );
-    VTest* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     this->__PVT__m_0__DOT__rA = (0xffU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[0U]);
     this->__PVT__m_1__DOT__rA = (0xffU & ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[1U] 
@@ -1739,7 +1739,7 @@ VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__c
 
 VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_6__23(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+                  VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_6__23\n"); );
-    VTest* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     this->__PVT__m_0__DOT__rA = (0xffU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[0U]);
     this->__PVT__m_1__DOT__rA = (0xffU & ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[1U] 
@@ -2027,7 +2027,7 @@ VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__c
 
 VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_7__24(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+                  VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_7__24\n"); );
-    VTest* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     this->__PVT__m_0__DOT__rA = (0xffU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[0U]);
     this->__PVT__m_1__DOT__rA = (0xffU & ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[1U] 
@@ -2315,7 +2315,7 @@ VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__c
 
 VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_8__25(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+                  VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_8__25\n"); );
-    VTest* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     this->__PVT__m_0__DOT__rA = (0xffU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[0U]);
     this->__PVT__m_1__DOT__rA = (0xffU & ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[1U] 
@@ -2603,7 +2603,7 @@ VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__c
 
 VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_9__26(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+                  VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_9__26\n"); );
-    VTest* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     this->__PVT__m_0__DOT__rA = (0xffU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[0U]);
     this->__PVT__m_1__DOT__rA = (0xffU & ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[1U] 
@@ -2891,7 +2891,7 @@ VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__c
 
 VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_10__27(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+                  VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_10__27\n"); );
-    VTest* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     this->__PVT__m_0__DOT__rA = (0xffU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[0U]);
     this->__PVT__m_1__DOT__rA = (0xffU & ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[1U] 
@@ -3179,7 +3179,7 @@ VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__c
 
 VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_11__28(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+                  VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_11__28\n"); );
-    VTest* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     this->__PVT__m_0__DOT__rA = (0xffU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[0U]);
     this->__PVT__m_1__DOT__rA = (0xffU & ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[1U] 
@@ -3467,7 +3467,7 @@ VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__c
 
 VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_12__29(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+                  VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_12__29\n"); );
-    VTest* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     this->__PVT__m_0__DOT__rA = (0xffU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[0U]);
     this->__PVT__m_1__DOT__rA = (0xffU & ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[1U] 
@@ -3755,7 +3755,7 @@ VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__c
 
 VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_13__30(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+                  VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_13__30\n"); );
-    VTest* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     this->__PVT__m_0__DOT__rA = (0xffU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[0U]);
     this->__PVT__m_1__DOT__rA = (0xffU & ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[1U] 
@@ -4043,7 +4043,7 @@ VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__c
 
 VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_14__31(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+                  VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_14__31\n"); );
-    VTest* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     this->__PVT__m_0__DOT__rA = (0xffU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[0U]);
     this->__PVT__m_1__DOT__rA = (0xffU & ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[1U] 
@@ -4331,7 +4331,7 @@ VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__c
 
 VL_INLINE_OPT void VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_15__32(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+                  VTest_DotProduct::_sequent__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_15__32\n"); );
-    VTest* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     this->__PVT__m_0__DOT__rA = (0xffU & vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[0U]);
     this->__PVT__m_1__DOT__rA = (0xffU & ((vlTOPp->Test__DOT__vta_shell__DOT__core__DOT__load__DOT__tensorLoad_0__DOT__tensorLoad__DOT___T_24[1U] 

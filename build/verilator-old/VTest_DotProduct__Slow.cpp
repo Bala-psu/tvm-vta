@@ -9,9 +9,7 @@
 
 //==========
 
-VTest_DotProduct::VTest_DotProduct(const char* _vcname__)
-    : VerilatedModule(_vcname__)
- {
+VL_CTOR_IMP(VTest_DotProduct) {
     // Reset internal values
     // Reset structure values
     _ctor_var_reset();
@@ -28,7 +26,7 @@ VTest_DotProduct::~VTest_DotProduct() {
 
 void VTest_DotProduct::_initial__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_0__1(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+                  VTest_DotProduct::_initial__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_0__1\n"); );
-    VTest* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     this->__PVT__m_0__DOT___RAND_0 = VL_RANDOM_I(32);
     this->__PVT__m_0__DOT__rA = (0xffU & this->__PVT__m_0__DOT___RAND_0);
@@ -106,7 +104,7 @@ void VTest_DotProduct::_initial__TOP__Test__DOT__vta_shell__DOT__core__DOT__comp
 
 void VTest_DotProduct::_settle__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_0__33(VTest__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+                  VTest_DotProduct::_settle__TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_0__33\n"); );
-    VTest* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    VTest* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     this->__PVT__m_0__DOT__mult = (0xffffU & VL_MULS_III(16,16,16, 
                                                          (0xffffU 

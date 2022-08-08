@@ -4,8 +4,8 @@
 // Internal details; most calling programs do not need this header,
 // unless using verilator public meta comments.
 
-#ifndef VERILATED_VTEST__SYMS_H_
-#define VERILATED_VTEST__SYMS_H_  // guard
+#ifndef _VTEST__SYMS_H_
+#define _VTEST__SYMS_H_  // guard
 
 #include "verilated_heavy.h"
 
@@ -43,8 +43,8 @@ class VTest__Syms : public VerilatedSyms {
     VTest_DotProduct               TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_9;
     
     // CREATORS
-    VTest__Syms(VerilatedContext* contextp, VTest* topp, const char* namep);
-    ~VTest__Syms();
+    VTest__Syms(VTest* topp, const char* namep);
+    ~VTest__Syms() {}
     
     // METHODS
     inline const char* name() { return __Vm_namep; }

@@ -5,8 +5,8 @@
 // The class here is then constructed to instantiate the design.
 // See the Verilator manual for examples.
 
-#ifndef VERILATED_VTEST_H_
-#define VERILATED_VTEST_H_  // guard
+#ifndef _VTEST_H_
+#define _VTEST_H_  // guard
 
 #include "verilated_heavy.h"
 #include "VTest__Dpi.h"
@@ -1957,19 +1957,13 @@ VL_MODULE(VTest) {
     VL_UNCOPYABLE(VTest);  ///< Copying not allowed
   public:
     /// Construct the model; called by application code
-    /// If contextp is null, then the model will use the default global context
-    /// If name is "", then makes a wrapper with a
+    /// The special name  may be used to make a wrapper with a
     /// single model invisible with respect to DPI scope names.
-    VTest(VerilatedContext* contextp, const char* name = "TOP");
-    VTest(const char* name = "TOP")
-      : VTest(nullptr, name) {}
+    VTest(const char* name = "TOP");
     /// Destroy the model; called (often implicitly) by application code
     ~VTest();
     
     // API METHODS
-    /// Return current simulation context for this model.
-    /// Used to get to e.g. simulation time via contextp()->time()
-    VerilatedContext* contextp();
     /// Evaluate the model.  Application must call when inputs change.
     void eval() { eval_step(); }
     /// Evaluate when calling multiple units/models per time step.
@@ -1981,11 +1975,13 @@ VL_MODULE(VTest) {
     void final();
     
     // INTERNAL METHODS
+  private:
     static void _eval_initial_loop(VTest__Syms* __restrict vlSymsp);
+  public:
     void __Vconfigure(VTest__Syms* symsp, bool first);
-    void __Vdpiimwrap_Test__DOT__sim_shell__DOT__mod_host__DOT__host_dpi__DOT__VTAHostDPI_TOP(CData/*7:0*/ (&req_valid), CData/*7:0*/ (&req_opcode), CData/*7:0*/ (&req_addr), IData/*31:0*/ (&req_value), CData/*7:0*/ req_deq, CData/*7:0*/ resp_valid, IData/*31:0*/ resp_value);
-    void __Vdpiimwrap_Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi__DOT__VTAMemDPI__Vdpioc2_TOP(CData/*7:0*/ rd_req_valid, CData/*7:0*/ rd_req_len, CData/*7:0*/ rd_req_id, QData/*63:0*/ rd_req_addr, CData/*7:0*/ wr_req_valid, CData/*7:0*/ wr_req_len, QData/*63:0*/ wr_req_addr, CData/*7:0*/ wr_valid, const QData/*63:0*/ (&wr_value)[1], QData/*63:0*/ wr_strb, CData/*7:0*/ (&rd_valid), CData/*7:0*/ (&rd_id), QData/*63:0*/ (&rd_value)[1], CData/*7:0*/ rd_ready);
-    void __Vdpiimwrap_Test__DOT__sim_shell__DOT__mod_sim__DOT__sim__DOT__VTASimDPI_TOP(CData/*7:0*/ (&sim_wait), CData/*7:0*/ (&sim_exit));
+    void __Vdpiimwrap_Test__DOT__sim_shell__DOT__mod_host__DOT__host_dpi__DOT__VTAHostDPI_TOP(CData/*7:0*/(&  req_valid), CData/*7:0*/(&  req_opcode), CData/*7:0*/(&  req_addr), IData/*31:0*/(&  req_value), const CData/*7:0*/ req_deq, const CData/*7:0*/ resp_valid, const IData/*31:0*/ resp_value);
+    void __Vdpiimwrap_Test__DOT__sim_shell__DOT__mod_mem__DOT__mem_dpi__DOT__VTAMemDPI__Vdpioc2_TOP(const CData/*7:0*/ rd_req_valid, const CData/*7:0*/ rd_req_len, const CData/*7:0*/ rd_req_id, const QData/*63:0*/ rd_req_addr, const CData/*7:0*/ wr_req_valid, const CData/*7:0*/ wr_req_len, const QData/*63:0*/ wr_req_addr, const CData/*7:0*/ wr_valid, const QData/*63:0*/(&  wr_value)[1], const QData/*63:0*/ wr_strb, CData/*7:0*/(&  rd_valid), CData/*7:0*/(&  rd_id), QData/*63:0*/(&  rd_value)[1], const CData/*7:0*/ rd_ready);
+    void __Vdpiimwrap_Test__DOT__sim_shell__DOT__mod_sim__DOT__sim__DOT__VTASimDPI_TOP(CData/*7:0*/(&  sim_wait), CData/*7:0*/(&  sim_exit));
   private:
     static QData _change_request(VTest__Syms* __restrict vlSymsp);
     static QData _change_request_1(VTest__Syms* __restrict vlSymsp);

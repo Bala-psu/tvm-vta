@@ -8,14 +8,9 @@
 
 
 // FUNCTIONS
-VTest__Syms::~VTest__Syms()
-{
-}
-
-VTest__Syms::VTest__Syms(VerilatedContext* contextp, VTest* topp, const char* namep)
+VTest__Syms::VTest__Syms(VTest* topp, const char* namep)
     // Setup locals
-    : VerilatedSyms{contextp}
-    , __Vm_namep(namep)
+    : __Vm_namep(namep)
     , __Vm_didInit(false)
     // Setup submodule names
     , TOP__Test__DOT__vta_shell__DOT__core__DOT__compute__DOT__tensorGemm__DOT__mvc_0__DOT__dot_0_0(Verilated::catName(topp->name(), "Test.vta_shell.core.compute.tensorGemm.mvc_0.dot_0_0"))

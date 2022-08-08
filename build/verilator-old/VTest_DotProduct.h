@@ -2,8 +2,8 @@
 // DESCRIPTION: Verilator output: Design internal header
 // See VTest.h for the primary calling header
 
-#ifndef VERILATED_VTEST_DOTPRODUCT_H_
-#define VERILATED_VTEST_DOTPRODUCT_H_  // guard
+#ifndef _VTEST_DOTPRODUCT_H_
+#define _VTEST_DOTPRODUCT_H_  // guard
 
 #include "verilated_heavy.h"
 #include "VTest__Dpi.h"
